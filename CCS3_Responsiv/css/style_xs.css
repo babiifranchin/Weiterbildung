@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
+/* Bootstrap breakpoints
+<576px Extra small	
+≥576px Small	
+≥768px Medium	
+≥992px Large	
+≥1200px Extra large */
+
+body {
+    /* align-content: flex-start; */
+    /* align-items: flex-start; */
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+.clearfix::after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+#header {
+    background-color: blue;
+    /* height: 400px; */
+    min-height: 30vh;
+    width: 100%;
+}
+
+#nav {
+    background-color: darkgray;
+    font-size: 1.5em;
+    min-height: 3em;
+    min-width: 3em;
+    position: fixed;
+        right: 1em;
+        bottom: 1em;
+}
+
+#hhicon {
+    display: none;
+}
+
+#hhicon ~ ul {
+    display: none;
+}
+
+#hhicon:checked ~ ul {
+    display: flex;
+}
+
+#nav > ul {
+    display: flex;
+    flex-direction: row; /* default */
+    justify-content: flex-start; /* default */
+    align-items: stretch; /* default */
+}
+
+#nav ul {
+    /* border: 1px solid tomato; */
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+#nav > ul > li {
+    /* border: 1px dotted green; */
+    /* list-style-type: square; */
+    /* display: table-cell; */
+    /* padding: 0.5em; */
+    position: relative;
+}
+
+#nav a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: .5em;
+}
+
+#nav > ul > li > a:hover {
+    background-color:orange;
+}
+
+#nav > ul ul {
+    display: none;
+    position: absolute;
+    background-color: wheat;
+} 
+
+#nav > ul ul a {
+    color: darkmagenta;
+    white-space: nowrap;
+}
+
+#nav > ul ul a:hover {
+    background-color: darkmagenta;
+    color: wheat;
+}
+
+#navbar > ul > li:hover > ul {
+    display: block;
+}
+
+.active {
+background-color: #4caf50;
+cursor: default;
+}
+
+.active:hover {
+background-color: #4caf50;
+}
+
+#main {
+    border: 1px solid palevioletred;
+    width: 100%;
+}
+
+#article {
+    background-color: lightblue;
+    min-height: 20vh;
+}
+
+#section1 {
+    background-color: cyan;
+    min-height: 20vh;
+}
+
+#section2 {
+    background-color: dodgerblue;
+    min-height: 20vh;
+}
+
+#aside {
+    background-color: orangered;
+    min-height: 20vh;
+    width: 100%;
+}
+
+#footer {
+    background-color: darkgreen;
+    min-height: 15vh;
+    width: 100%;
+}
+
+
+@media screen and (min-width: 992px) {
+
+    #nav {
+        position: static;
+        width: 100%;
+    }
+
+    #nav > ul {
+        display: flex;
+        flex-direction: row; /* default */
+        justify-content: flex-start; /* default */
+        align-items: stretch; /* default */
+    }
+    
+    #nav ul {
+        /* border: 1px solid tomato; */
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    #nav > ul > li {
+        /* border: 1px dotted green; */
+        /* list-style-type: square; */
+        /* display: table-cell; */
+        /* padding: 0.5em; */
+        position: relative;
+    }
+    
+    #nav a {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        padding: .5em;
+    }
+    
+    #nav > ul > li > a:hover {
+        background-color:orange;
+    }
+    
+    #nav > ul ul {
+        display: none;
+        position: absolute;
+        background-color: wheat;
+    } 
+    
+    #nav > ul ul a {
+        color: darkmagenta;
+        white-space: nowrap;
+    }
+    
+    #nav > ul ul a:hover {
+        background-color: darkmagenta;
+        color: wheat;
+    }
+    
+    #navbar > ul > li:hover > ul {
+        display: block;
+    }
+    
+    .active {
+    background-color: #4caf50;
+    cursor: default;
+    }
+    
+    .active:hover {
+    background-color: #4caf50;
+    }
+
+    #main {
+        align-self: stretch;
+        display: flex;
+        order: 1;
+        min-height: cal(100vh - 33vh - 15vh - 3em);
+        width: 75%;
+    }
+
+    #article {
+        width: 50%;
+    }
+
+    #section1 {
+        order: -1;
+        width: 30%;
+    }
+
+    #section2 {
+        width: 20%;
+    }
+
+    #aside {
+        width: 25%;
+    }
+
+    #footer {
+        order: 1;
+    }
+
+}

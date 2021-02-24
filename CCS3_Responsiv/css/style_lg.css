@@ -1,0 +1,30 @@
+#main {
+    align-self: stretch;
+    /* display: flex; */
+    flex-wrap: nowrap;
+    min-height: calc(100vh -33vh - 15vh - 3em);
+    order: 1;
+    width: 75%;
+}
+
+#article {
+    width: 50%;
+}
+
+#section1 {
+    order: -1;
+    width: 25%;
+}
+
+#section2 {
+    width: 50%;
+}
+
+#aside {
+    align-self: stretch;
+    width: 25%;
+}
+
+#footer {
+    order: 1;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formular</title>
+    </head>
+
+    <body>
+        <label>Buchungsfortscritt:</label>
+        <progress value="75" max="100">3 von 4</progress>
+        <form action="#">
+            <p><fieldset>
+                <legend>Persönliche Daten:</legend>
+                <p>
+                    <label>Nachname:*</label><br>
+                    <input type="text" required>
+                </p>
+                <p>
+                    <label>Vorname:*</label><br>
+                    <input type="text" required />
+                </p>
+                <p>
+                    <label>Straße:</label><br>
+                    <input type="text">
+                </p>
+                <p>
+                    <label>Wohnort:</label><br>
+                    <input type="text">
+                </p>
+                <p>
+                    <label>E-Mail*:</label><br >
+                    <input type="email" required />
+                </p>
+                <p>
+                    <label>Telefonnummer:</label><br>
+                    <input type="tel">
+                </p>
+                <p>
+                    <label>Alter*:</label><br>
+                    <input type="number" min="18" max="100" placeholder="Mindestalter 18" required />
+                </p>
+            </fieldset></p>
+            <p><fieldset>
+                <legend>Ihre Urlaubsreise:</legend>
+                <p>
+                    <label>Wohin soll die Reise gehen?</label><br>
+                    <select name="Land" size="6">
+                        <option>Frankreich</option>
+                        <option>Spanien</option>
+                        <option>Italien</option>
+                        <option>USA</option>
+                        <option>China</option>
+                        <option>Thailand</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Abreisedatum:</label><br>
+                    <input type="date">
+                </p>
+                <p>
+                    <label>Anmerkungen</label><br />
+                    <textarea name="Anmerkungen" id="anmerkungen" rows="10" cols="25"></textarea>
+                </p>
+                <p>
+                    <label>Wie sollen wir Sie benachrichtigen?</label><br />
+                        <input type="radio" name="benachrichtigen" id="BN1" value="mail">
+                        <label for="BN1">per Mail</label><br>
+                        <input type="radio" name="benachrichtigen" id="BN2" value="telefon">
+                        <label for="BN2">per Telefon</label><br>
+                        <input type="radio" name="benachrichtigen" id="BN3" value="post">
+                        <label for="BN3">per Post</label><br />
+                </p>
+            </fieldset></p>
+            <input type="submit" name="senden" id="senden">
+            <input type="reset" name="weg" id="weg" value="Löschen">
+        </form>
+    </body>
+</html>

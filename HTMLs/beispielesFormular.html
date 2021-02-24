@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formular</title>
+    </head>
+    <body>
+        <form action="#" method="post" id="form1">
+            <fieldset>
+                <legend>Persönliche Daten</legend>
+                <div>
+                    <span>
+                        <input type="radio" name="genre" id="radio1" value="frau">
+                        <label for="radio1">Frau</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="genre" id="radio2" value="mann">
+                        <label for="radio2">Mann</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="genre" id="radio3" value="divers">
+                        <label for="radio3">Divers</label>
+                    </span>
+                </div>
+                <div>
+                    <label for="Vorname">Vorname:</label>
+                    <input type="text" name="vorname" id="Vorname" size="30" maxlength="10" minlength="3" required placeholder="Hier bitte Vornamen eingeben!">
+                </div>
+                <div>
+                    <label for="Nachname">Nachname:</label>
+                    <input type="text" name="nachname" id="Nachname" placeholder="Hier bitte Nachnamen eingeben!">
+                </div>
+                <div>
+                    <label for="Strasse">Straße</label>/<label for="hausnr">Hausnummer:</label>
+                    <input type="text" name="strasse" id="Strasse" placeholder="Straße" min="1">
+                    <input type="text" name="hsnr" id="hausnr" pattern="[1-9][0-9]{0,2}[A-Z]{0,1}" size="6">
+                </div>
+                <div>
+                    <label for="plz">PLZ</label>/<label for="ort">Ort:</label>
+                    <input type="text" name="plz" id="plz" pattern="(?!01000)([0][1-9][0-9]{3})|(?!99999)([1-9][0-9]{4})" size="5" >
+                    <!--entweder min="0" max="99999" minlength="5, oder pattern-->
+                    <input type="text" name="ort" id="ort" placeholder="Ort">                 
+                </div>
+                <div>
+                    <label for="gbdt">Geburtsdatum</label>
+                    <input type="date" name="gbdt" id="gbdt">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Logindaten</legend>
+                <div>
+                    <label for="mail">E-Mail</label>
+                    <input type="email" name="email" id="mail" size="25" maxlength="25" minlength="1"  required placeholder="max@mustermann.de">
+                </div>
+                <div>
+                    <label for="pwd">Passwort</label>
+                    <input type="password" name="password" id="pwd" size="25" maxlength="25" minlength="8" required placeholder="ganzgeheim">
+                </div>
+                <div>
+                    <label for="pwdwd">Passwortwiederholung</label>
+                    <input type="password" name="password" id="pwdwd" size="25" maxlength="25" minlength="8" required placeholder="ganzgeheim">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Nachricht</legend>
+                <div>
+                    <label for="betreff">Betreff</label>
+                    <select name="betreff" id="betreff" size="1" multiple>
+                        <option>Reklamation</option>
+                        <option>Feedback</option>
+                        <option>Frage zu Produkt</option>
+                        <option>Gewinnspiel</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea name="kommentar" id="kommentar" rows="10" cols="25" placeholder="Schreiben Sie hier ihren Kommentar"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Newsletter</legend>
+                <span>
+                    <input type="checkbox" name="nl_produkte" id="check1">
+                    <label for="check1">Newsletter Produkte</label> 
+                    <input type="checkbox" name="nl_firma" id="check2">
+                    <label for="check2">Newsletter Firma</label> 
+                    <input type="checkbox" name="nl_gewinn" id="check3">
+                    <label for="check3">Newsletter Gewinnspiel</label> 
+                </span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Aktionen</legend>
+                <div>
+                    <input type="submit" form="form1" value="ab damit!" onclick=""> 
+                    <input type="reset" value="nochmal neu">
+                    <input type="button" value="irgendwas" name="button" id="button">
+                    <input type="image" src="muelleimer.png" alt="Löschen" />
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

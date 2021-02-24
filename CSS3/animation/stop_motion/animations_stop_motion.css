@@ -1,0 +1,22 @@
+#hangman {
+    margin: 0 auto;
+    padding: 0;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
+    
+    width: 18.375rem; /* ≘ 294px Frame-Breite */
+    height: 30rem; /* ≘ 480px Bildhöhe */
+    background: url(animation.jpg) no-repeat;
+    background-size: cover;
+
+    animation: bewegen 1s steps(8, end) infinite;
+}
+
+@keyframes bewegen {
+    from {
+        background-position: left top;
+    }
+
+    to {
+        background-position: right top;
+    }
+}

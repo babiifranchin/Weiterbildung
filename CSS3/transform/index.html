@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+   <head>
+      <meta charset="UTF-8">
+      <title>Transformation</title>
+      <!-- <link rel="stylesheet" href="css/nomalize.css" type="text/css"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" type="text/css">      
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <style>
+         #rotate .transformed .transobj {
+            transform-origin: 100px 100px;
+            transform: rotate(0.5turn);
+         }
+         #rotateX .transformed .transobj {
+            transform: rotateX(90deg);
+         }
+         #rotateY .transformed .transobj {
+            transform-origin: right center;
+            transform: rotateY(45deg);
+         }
+         #rotateZ .transformed .transobj {
+            transform: rotateZ(0.75turn);
+         }
+         #scale .transformed .transobj {
+            transform: scale(.5);
+         }
+         #scaleX .transformed .transobj {
+            transform: scaleX(2);
+         }
+         #scaleY .transformed .transobj {
+            transform: scaleY(.5);
+         }
+         #scaleZ .transformed .transobj {
+            /* box-shadow: 2px 2px 2px grey; */
+            transform: scaleZ(2);
+         }
+         #skew .transformed .transobj {
+            transform: skew(0deg, 30deg);
+         }
+         #SkewX .transformed .transobj {
+            /* transform: skewX(-45deg); */
+         }
+         #SkewY .transformed .transobj {
+            /* transform: skewY(45deg); */
+         }
+         #translate .transformed .transobj {
+            /* transform: translate(100px); */
+         }
+         #translateX .transformed .transobj {
+            /* transform: translateX(100px); */
+         }
+         #translateY .transformed .transobj {
+            /* transform: translateY(100px); */
+         }
+         #translateZ .transformed .transobj {
+            /* transform: perspective(200px) translateZ(0px) rotateX(0deg) rotateY(0deg); */
+            /* transition: 1s ease-out; */
+         }
+         #translateZ .transformed:hover .transobj {
+            /* transform: perspective(200px) translateZ(-500px) rotateX(270deg) rotateY(359deg); */
+            /* transition: 3s ease-out; */
+         }
+
+      </style>
+   </head>
+   <body>
+      <main>
+         <h1 class="cardbox">CSS Transformationen</h1>
+         <div id="rotate" class="cardbox">
+            <h2>2D-Rotation</h2>
+            <pre>
+               rotate(winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="rotateX" class="cardbox">
+            <h2>3D-Rotation um die x-Achse</h2>
+            <pre>
+               rotateX(winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="rotateY" class="cardbox">
+            <h2>3D-Rotation um die y-Achse</h2>
+            <pre>
+               rotateY(winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="rotateZ" class="cardbox">
+            <h2>3D-Rotation um die z-Achse (identisch mit rotate[]</h2>
+            <pre>
+               rotateZ(winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="scale" class="cardbox">
+            <h2>2D—Skalierung</h2>
+            <pre>
+               scale(x, y)
+            </pre>
+            <p>Gültige Werte: Dezimalzahl (Wert des Prozentsatz, also Prozentzahl / 100% =&gt; 1 entspricht 100%) </p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="scaleX" class="cardbox">
+            <h2>Skalierung entlang der x-Achse</h2>
+            <pre>
+               scaleX(X)
+            </pre>
+            <p>Gültige Werte: Dezimalzahl (Wert des Prozentsatz, also Prozentzahl / 100% =&gt; 1 entspricht 100%)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="scaleY" class="cardbox">
+            <h2>Skalierung entlang der y-Achse</h2>
+            <pre>
+               scaleY(y)
+            </pre>
+            <p>Gültige Werte: Dezimalzahl (Wert des Prozentsatz, also Prozentzahl / 100% =&gt; 1 entspricht 100%)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="scaleZ" class="cardbox">
+            <h2>Skalierung entlang der z-Achse</h2>
+            <pre>
+               scaleZ(z)
+            </pre>
+            <p>Gültige Werte: Dezimalzahl (Wert des Prozentsatz, also Prozentzahl / 100% =&gt; 1 entspricht 100%)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="skew" class="cardbox">
+            <h2>2D-Neigung (Scherung) entlang der x- und y-Achse</h2>
+            <pre>
+               skew(x—winkel, y—winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="SkewX" class="cardbox">
+            <h2>2D-Neigung (Scherung) entlang der x-Achse</h2>
+            <pre>
+               SkewX(winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="SkewY" class="cardbox">
+            <h2>2D-Neigung (Scherung) entlang der y-Achse</h2>
+            <pre>
+               SkewY(winkel)
+            </pre>
+            <p>Gültige Werte: Winkelmaße (deg, grad, rad, turn)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="translate" class="cardbox">
+            <h2>2D-Versatz</h2>
+            <pre>
+               translate(x, y)
+            </pre>
+            <p>Gültige Werte: Längenangabe, Prozentangabe (bezieht sich auf die Elementenabmessung!)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="translateX" class="cardbox">
+            <h2>Versatz auf der x—Achse</h2>
+            <pre>
+               translateX(x)
+            </pre>
+            <p>Gültige Werte:  Längenangabe, Prozentangabe (bezieht sich auf die Elementenabmessung!)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="translateY" class="cardbox">
+            <h2>Versatz auf der y-Achse</h2>
+            <pre>
+               translateY(y)
+            </pre>
+            <p>Gültige Werte:  Längenangabe, Prozentangabe (bezieht sich auf die Elementenabmessung!)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="translateZ" class="cardbox">
+            <h2>Versatz auf der z-Achse</h2>
+            <pre>
+               translateZ(z)
+            </pre>
+            <p>Gültige Werte: Längenangabe, Prozentangabe (bezieht sich auf die Elementenabmessung!)</p>
+            <div class="testarea">
+               <div class="original">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+               <div class="transformed">
+                  <div class="transobj clearfix">
+                     <img src="img/url.jpg" alt="hübsch, ne">
+                     <h3>Überschrift</h3>
+                     <p>Bavaria ipsum dolor sit amet ned du ...</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="translateZ" class="cardbox">
+            Ferner gibt es noch 3d-Transformationen, wie folgt:
+            <ul>
+               <li><a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/%C3%A4u%C3%9Fere_Gestaltung/Transformationen/rotate#rotate3d.28.29">rotate3d()</a></li>
+               <li><a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/%C3%A4u%C3%9Fere_Gestaltung/Transformationen/scale#scale3d.28.29">scale3d()</a></li>
+               <li><a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/%C3%A4u%C3%9Fere_Gestaltung/Transformationen/translate#translate3d.28.29">translate3d()</a></li>
+               <li><a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/%C3%A4u%C3%9Fere_Gestaltung/Transformationen/perspective">perspektivische Ansicht für 3d-Transformationen</a></li>
+               <li><a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/%C3%A4u%C3%9Fere_Gestaltung/Transformationen/matrix">matrix()- und matrix3d()</a></li>
+               <li><a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/%C3%A4u%C3%9Fere_Gestaltung/Transformationen">Übersicht Transformationen</a></li>
+            </ul>
+         </div>
+      </main>
+   </body>
+</html>

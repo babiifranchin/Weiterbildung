@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    padding: 0;
+    background: #fff;
+}
+
+body {
+    color: #333;
+    font-size: 1em;
+    font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+    width: 85%;
+    min-width: 600px;
+    margin: 3em auto;
+    padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display: block;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+em, i {
+    font-style: italic;
+}
+
+img {
+    border-style: none;
+}
+
+a {
+    outline: none;
+}
+
+p {
+    line-height: 1.5;
+}

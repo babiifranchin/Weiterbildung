@@ -1,0 +1,59 @@
+/* CSS für flexboxen.html */
+
+html { 
+   box-sizing: border-box;
+}
+
+*, ::before, ::after { 
+   box-sizing: inherit; 
+}
+
+html, p, div, main {
+   margin: 0;
+   padding: 0;
+}
+
+p {
+   border: 1px dotted yellow;
+   color: snow;
+   flex-shrink: 0;
+   /* margin: 1em; */
+   padding: 1em;
+   width: 500px;
+}
+
+#flexcontainer {
+   align-items: flex-start;
+   border: 1px solid green;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin: 1em;
+   min-height: 35vh;
+   /* overflow: auto; */
+}
+
+#flexitem1 {
+   background-color: #112233;
+}
+
+#flexitem2 {
+   background-color: #223344;
+}
+
+#flexitem3 {
+   background-color: #334455;
+}
+
+#flexitem4 {
+   background-color: #445566;
+}
+
+#flexitem5 {
+   background-color: #556677;
+}
+
+#flexitem2::first-line {
+   font-size: 2em;
+}

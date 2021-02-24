@@ -1,0 +1,398 @@
+<!-- 2. CSS verwenden -->
+Wie binden Sie CSS-Vorgaben in Ihr Dokument ein, die nur für die Bildschirmdarstellung gelten sollen?
+    <style media="screen">
+        /* CSS-Vorgaben */
+    </style>
+
+Welche der folgenden Maßeinheiten stehen in CSS zur Verfügung?
+    vw, cm, rem, in
+
+Was bedeuten Präfixe wie -webkit und -moz in CSS-Eigenschaften und -werten?
+    Solche Eigenschaften und Werte werden nur von Browsern erkannt, die die jeweilige Rendering-Engine verwenden.
+
+Wie weisen Sie einem Absatz die Schriftart Courier New zu?
+    p { font-family: "Courier New"; }
+    p { font-family: 'Courier New'; }
+
+Wie setzen Sie die Schriftgröße eines Absatzes auf 16 Pixel?
+    p { font-size: 16px; }
+
+<!-- 3. Einbildung von CSS und Testen von Websites -->
+Wie werden interne Stylesheets in den Dateikopf von HTML-Seiten eingebettet?
+    <style media="screen">
+        /* CSS-Vorgaben */
+    </style>
+
+Wie ändern Sie die Schriftgröße eines einzelnen <p>-Tags mit Inline-CSS?
+    <p style="font-size: 20px;">...</p>
+
+<!-- 4. Die Verwndung von Farben -->
+Was ist die dezimale Entsprechung für den Hex-Wert ff?
+    255
+
+Wie definieren Sie blaue Textfarbe für einen Absatz?
+    <style>
+        p {
+            color: #0000ff;
+            color: #00f;
+            color: blue;
+            color: rgb(0, 0, 255);
+        }
+    </style>
+
+Welcher der folgenden Hex-Werte erzeugt die Farbe Gelb?
+    <style>
+        p {
+            color: #ff0;
+        }
+    </style>
+
+Mit welchem Farbsystem arbeitet jeder Computermonitor?
+    rgb
+
+Welche der folgenden dezimalen CSS-Farbwerte entsprechen der Farbe #f00?
+    <style>
+        p{
+            color: rgb(255, 0, 0);
+            color: rgba(255, 0, 0, 1);
+        }
+    </style>
+
+<!-- 5. Allgemeine Vorgaben für Ihr Dokument -->
+Welche Elemente im nachfolgenden Codebeispiel sind Child-Elemente von <div>?
+    Nur der Absatz <p> ist ein Kindelement von <div>.
+
+Welche Zustände (Pseudoklassen) gibt es für Hyperlinks in CSS?
+    :hover, :visited, :focus, :active
+
+Welche der nachfolgenden Elemente sind Parent-Elemente von <em>?
+    Nur <a> ist ein Elternelement von <em>.
+
+Welche CSS-Eigenschaft steuert den Zeilenabstand?
+    line-height
+
+Wie bestimmen Sie, dass eine Tabellenzeile beim Überfahren mit der Maus einen grauen Hintergrund bekommt?
+    <style>
+        tr:hover {
+            background-color: gray;
+        }
+    </style>
+
+Wie können Sie mehreren Selektoren gleichzeitig Eigenschaften zuweisen?
+    p, h1, h2 {...}
+
+Welche Schriftgröße haben die Texte in den DIVs im folgenden Beispiel, wenn man als Grundschriftgröße 16px ansetzt?
+    Text 1 ist 40px groß, Text 2 100px.
+
+<!-- 6. Klassen und IDs -->
+Welche der folgenden CSS-Selektoren wählen ein Element mit der ID my-id aus?
+    <div id="my-id"></div>
+    <style>
+        div#my-id {}
+        #my-id {}
+    </style>
+
+Wie können Sie das folgende HTML-Element mit CSS auswählen?
+    <h3 class="box_heading">Text</h3>
+    <style>
+        .box_heading {}
+        h3.box_heading {}
+    </style>
+
+Wie können Sie in HTML einem Absatz die Klassen highlighted und centered glechzeitig zuweisen?
+    <p class="highlighted centered">Text</p>
+
+
+<!--7. Layoutbereiche festlegen und gestalten-->
+Mit welcher Eigenschaft erzeugen Sie einen Innenabstand zum Inhalt eines Elements?
+    padding
+
+Wie erzeugen Sie eine schwarze Kontur um einen Absatz?
+    <style>
+        p {
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        
+            border: 1px dotted black;
+
+            border: 1px solid black;
+        }
+    </style>
+
+<!--8. Hintergründiges-->
+Wie weisen Sie dem body eines HTML-Dokuments das Hintergrundbild bg.gif zu, sodass es nicht kachelt und beim Scrollen stehenbleibt?
+    <style>
+        body {
+            background-image: url(bg.gif);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            background: url(bg.gif) no-repeat fixed;
+        }
+    </style>
+
+Wie erzeugen Sie einen vertikalen Verlauf von oben (gelb) nach unten (orange)?
+<style>
+    div {
+        background-image: linear-gradient(180deg, yellow, orange);
+        background-image: linear-gradient(yellow, orange);
+    }
+</style>
+
+Wie können Sie das Hintergrundbild olivenbaeume.jpg so einpassen, dass es das Element auf jeden Fall vollständig ausfüllt, und wenn nötig der linke und untere Bereich abgeschnitten wird (s. Abb.)?
+<style>
+    div {
+        background: url(olivenbaumen.jpg) no-repeat right top;
+        background-size: cover;
+    }
+</style>
+
+<!--9. Transitions-->
+Was bewirkt die CSS-Eigenschaft transition?
+    Sie erzeugt weiche Übergänge zwischen zwei Zuständen eines Elements.
+
+Welche Beschleunigungsarten (Timing Functions) können Sie einer transition zuweisen?
+    ease, ease-in, ease-out, ease-in-out
+
+<!--10. Einfache Layouts gestalten-->
+Mit welcher CSS-Eigenschaft bestimmen Sie, dass ein Element von allen nachfolgenden Elementen links umflossen wird?
+    <style>    
+        selektor {
+            float: right;
+        }
+    </style>
+
+Wie erzeugen Sie mit CSS Scrollbalken für ein Element?
+    <style>
+        selektor {
+            overflow: scroll;
+            overflow: auto;
+        }
+    </style>
+
+<!--11. Bedingte Selektoren-->
+Sie möchten allen Absätzen <p> in der folgenden Tabelle eine blaue Textfarbe zuweisen. Welche/r Selektor/en ist/sind korrekt?
+    <style>
+        td p {
+            color: #28e;
+        }
+
+        td > p {
+            color: #28e;
+        } 
+
+        table p {
+            color: #28e;
+        }
+    </style>
+
+Welche HTML-Elemente im nachfolgenden Codebeispiel erhalten durch folgende CSS-Angabe eine rote Textfarbe?
+    <style>
+        p + p {
+            color: red;
+        } 
+    </style>
+    Der zweite, dritte und fünfte Absatz.
+
+<!--12. Positionierung von Elementen-->
+Was bewirkt die CSS-Eigenschaft position: fixed?
+    Die fixierte Positionierung nimmt ein Element aus dem normalen Objektfluss heraus und setzt es auf eine neue Ebene, sodass es beim Scrollen des Viewports stehenbleibt.
+
+Was bewirkt die CSS-Eigenschaft position: absolute?
+    Die absolute Positionierung nimmt ein Element aus dem normalen Objektfluss heraus und setzt es auf eine neue Ebene, sodass es benachbarte Elemente nicht mehr verdrängen kann. Das Element scrollt jedoch weiterhin mit.
+
+Was bewirkt die CSS-Eigenschaft position: relative?
+    Die relative Positionierung erlaubt das Verschieben von Elementen mit den Eigenschaften left, top, bottom und right, ausgehend von ihrer ursprünglichen Position. Benachbarte Elemente werden dabei weiterhin verdrängt.
+
+<!--13. Web Fonts-->
+Welche Schriftformate werden von allen aktuellen Browsern (IE, Edge, Firefox, Safari, Chrome, Opera) voll unterstützt?
+    WOFF
+
+Wie binden Sie die Schriftdatei scriptum.woff in Ihre Website ein?
+    <style>
+        @font-face {
+            font-family: MyFont;
+            src: url(scriptum.woff) format("woff");
+        }
+        
+        @font-face {
+            font-family: Scriptum;
+            src: url(scriptum.woff) format("woff");
+        }
+    </style>
+
+<!--14. Pseudoklassen und Pseudoelemente-->
+Wie können Sie in folgendem Codebeispiel nur den zweiten Absatz auswählen?
+    <body>
+        <h1>Überschrift</h1>
+        <p>Erster Absatz</p>
+        <p>Zweiter Absatz</p>
+        <p>Dritter Absatz</p>
+    </body>
+
+    <style>
+        p:nth-of-type(2){}
+        p:nth-child(3){}
+
+    </style>
+
+Wie setzen Sie die Grafik smiley.gif aus dem Ordner images automatisch vor jede h1-Überschrift?
+    <style>
+        h1::before {
+            content: url(images/smiley.gif);
+        }
+    </style>
+
+Wie können Sie die Textauswahlfarbe für das gesamte Dokument auf rot stellen?
+    <style>
+        ::selection {
+            background-color: #f00;
+        }
+    </style>
+
+<!--15. Flexible Layouts mit Flexbox-->
+Mit welcher CSS-Eigenschaft definieren Sie eine mehrzeilige Flexbox?
+    <style>
+        selektor {
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+
+Welche der nachfolgenden HTML-Snippets erzeugen mit folgendem CSS-Code die hier abgebildete Flexbox?
+    <nav>
+        <ul class="flex">
+            <li>
+                <a href="#">Text</a>
+            </li>
+
+            <li>
+                <a href="#">Text</a>
+            </li>
+        </ul>
+    </nav>
+
+    <article>
+        <div class="flex">
+            <h1>Text</h1>
+            Text
+        </div>
+    </article>
+
+    <p class="flex">
+        Text
+        <a href="#">Text</a>
+    </p>
+    
+    <header class="flex">
+        <a href="#">Text</a>
+        <button type="button">Text</button>
+    </header>
+
+<!--16. Grafische Effekte-->
+Wie definieren Sie in CSS eine Rotation um -75 Grad um die z-Achse?
+    <style>
+        selektor {
+            transform: rotateZ(-75deg);
+            transform: rotate(-75deg);
+        }
+    </style>
+
+Mit welcher CSS-Deklaration können Sie ein HTML-Element um 10px weichzeichnen?
+    <style>
+        selektor {
+            filter: blur(10px);
+        }
+    </style>
+
+Welche Voraussetzung benötigt eine Pixelgrafik, die Sie als Bildmaske verwenden möchten?
+    Sie muss transparente Bereiche enthalten.
+
+Was bewirkt die CSS-Eigenschaft perspective?
+    Sie bestimmt die Entfernung des Elements vom Betrachter.
+
+Wie legen Sie mit CSS den Transformationspunkt eines Elements auf die linke obere Ecke fest?
+    <style>
+        selektor {
+            transform-origin: left 0%;
+            transform-origin: 0% 0%;
+            transform-origin: left top;
+            transform-origin: 0% top;
+        }
+    </style>
+
+<!-- 17. Keyframe-Animationen -->
+Was ist in CSS ein Keyframe?
+    Ein manuell festgelegter Zeitpunkt im Verlauf einer Animation, an dem Änderungen definiert werden.
+
+Wie definieren Sie in CSS die Keyframes für eine Animation, bei der ein Element nach und nach eingeblendet werden soll?
+    <style>
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+Wie legen Sie fest, dass eine Animation rückwärts abgespielt werden soll?
+    <style>
+        selektor {
+            animation-direction: reverse;
+        }
+    </style>
+
+Welche der folgenden Einzel-Eigenschaften sind in der Sammel-Eigenschaft animation enthalten?
+    animation-duration
+    animation-iteration-count
+    animation-direction
+    animation-timing-function
+    
+<!-- 18. Dynamisches CSS mit Kalkulationen und Variablen -->
+Welche der folgenden Ausdrücke für calc( ) sind korrekt?
+    <style>
+        selektor {
+            width: calc(var(--default-width) / 2);
+            height: calc(100vh / 2 - 20rem / 2);
+            border: calc(2em + 15px + 75%);
+        }
+    </style>
+
+Was ist im folgenden Ausdruck falsch?
+    <style>
+        selektor {
+            width: calc (500-30%);
+        }
+    </style>
+    Zwischen calc und der runden Klammer darf kein Leerzeichen stehen.
+    Bei dem Wert 500 fehlt die Maßeinheit.
+    Vor und nach dem Minuszeichen müssen Leerzeichen stehen.
+
+<!-- 19. Grundlagen des Responsive Designs -->
+Was sind die Besonderheiten von Viewports mobiler Browser auf Touchscreens?
+    Übergroße Webseiten werden standardmäßig verkleinert, sodass möglichst viel davon zu sehen ist.
+
+<!-- 20. Media Queries -->
+Wie binden Sie die CSS-Datei styles-mq.css, die Media Queries enthält, in Ihr HTML-Dokument ein?
+    <link href="styles-mq.css" rel="stylesheet" media="screen" />
+
+Welche der folgenden Angaben sind gültige CSS-Media-Queries?
+<style>
+    @media (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {}
+    @media screen and (min-device-width: 1024px) {}
+</style>

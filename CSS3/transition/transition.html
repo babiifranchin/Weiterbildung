@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        section {
+            width: 60vw;
+            margin: 1em auto;
+            border: 1px solid tomato;
+            padding: 1em;
+        }
+
+        h2 {
+            color: tomato;
+            background-color: lightgoldenrodyellow;
+            min-height: 5em;
+        }
+
+        section > div {
+            /* display: none; */
+            /* visibility: hidden; */
+            /* opacity: 0; */
+            filter: opacity(0);
+            font-size: 3em;
+            font-weight: bold;
+            width: 300px;
+            height: 300px;
+            border: 5px solid green;
+            background-color: greenyellow;
+            color: purple;
+            text-align: center;
+            transition-duration: .5s;
+            transition-timing-function: ease-in;
+        }
+
+        section > div:hover {
+            /* display: block; */
+            /* visibility: visible; */
+            /* opacity: 1; */
+            filter: opacity(1);
+            width: 100%;
+            height: 5em;
+            /* border: 5px solid blue; */
+            border-color: blue;
+            background-color: lightskyblue;
+            color: tomato;
+            border-radius: 50%;
+            /* text-align: center; */
+            /* transition-duration: 2s;
+            transition-delay: 1s;
+            transition-timing-function: steps(4, start);
+            transition-property: background-color, color;
+            transition: background-color 2s 1s steps(4, start), border 3s linear, color 5s 2.5s ease; */
+            transition: 2s linear;
+        }
+
+        figure > img {
+            width: 100%;
+            filter: grayscale(0.5) blur(1px);
+            transition: 0.5s;
+        }
+
+        figure > img:hover {
+            filter: grayscale(0) blur(0);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Transition</h2>
+        <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quasi deserunt neque, quidem ratione, beatae fugit amet doloremque expedita maxime laborum mollitia id sint, repellat perspiciatis. Quibusdam cupiditate nihil ipsa!</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+article {
+    background-color: silver;
+    /* width: auto; */
+    /* float: none; */
+    margin: 0 0 1rem 0;
+    min-height: 15vh;
+}
+
+@media screen and (min-width: 361px) {
+    body {
+        margin: 1ex;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    article {
+        width: 30%;
+        float: left;
+        margin-right: 3%;
+    }
+}
+

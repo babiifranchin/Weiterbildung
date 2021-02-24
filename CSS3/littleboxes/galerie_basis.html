@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+   <head>
+      <meta charset="UTF-8">
+      <title>Little Boxes - Kap. 14 Floats einschließen - HTML und Basis-CSS (01)</title>
+      <style>
+         body {
+           font-family: Verdana, Arial, Helvetica, sans-serif;
+           font-size: small;
+         }
+
+         h2 {
+            font-size: 130%; }
+
+         h3 {
+           font-size: 110%;
+           margin: 0 0 1em 0;
+         }
+
+         .galerie {
+           background-color: #eee;
+           border: 1px solid black;
+           margin: 0 3px 3px 0;
+           /* min-height: 200px; */
+           padding: 10px;
+           padding-top: 25px;
+           width: 500px;
+         }
+
+         img {
+            float: left;
+            margin-right: 15px;
+            }
+
+         .clearfix::after {
+            content: ".";
+            display: block;
+            clear: both;
+            font-size: 0;
+            height: 0;
+            visibility: hidden;
+         }
+         
+         .clear {
+            clear: both;
+         }
+
+         </style>
+   </head>
+   <body>
+      <h2>Die Galerie</h2>
+      <div class="galerie">
+         <img src="landschaft01.jpg" width="203" height="180" alt="Von Bäumen umstandener See, in dem sich Wolken spiegeln">
+         <h3>Landschaftsbild 01</h3>
+         <p>Lorem ipsum dolor sit amet, ...</p>
+      </div> <!-- Ende .galerie 01 -->
+
+      <div class="galerie clearfix">
+         <img src="landschaft02.jpg" width="203" height="180" alt="Weite Grasfläche mit Wolken und Halmen im Vordergrund">
+         <h3>Landschaftsbild 02</h3>
+         <p>Lorem ipsum dolor sit amet, ...</p>
+      </div> <!-- Ende .galerie 02 -->
+
+      <p class="clear">Alle Fotos von <a href="http://pixelio.de/">pixelio.de</a></p>
+   </body>
+</html>

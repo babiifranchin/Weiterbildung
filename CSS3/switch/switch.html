@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Switch</title>
+        <link href="css/basics.css" rel="stylesheet"/>
+        <link href="css/switch.css" rel="stylesheet"/>
+        <style>
+            /* Checkbox verbergen */
+            #switchbox {
+                position: absolute;
+                visibility: hidden;
+            }
+
+            #switchbox + label, #switchbox + label::before {
+                display: block;
+                transition: all 0.4s cubic-bezier(0.54, 1.6, 0.5, 1);
+            }
+
+            /* Hintergrund */
+            #switchbox + label {
+                background: #ccccd2;
+                border-radius: 1em;
+                cursor: pointer;
+                font-size: 3rem;
+                height: 1.875em;
+                position: relative;
+                width: 3.75em;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+
+            /* Knopf */
+            #switchbox + label::before {
+                background: #f5f5f9;
+                border-radius: 50%;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.07);
+                content: " ";
+                height: 80%;
+                position: absolute;
+                    left: 5%;
+                    top: 10%;
+                width: 40%;
+            }
+
+            #switchbox:checked + label {
+                background: #64bd63;
+            }
+
+            #switchbox:checked + label::before {
+                left: 55%;
+            }
+
+            /* Beschriftung */
+            #switchbox + label span {
+                display: block;
+                font-size: .8em;
+                position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 105%;                   
+                text-align: center;
+            }
+        </style>    
+    </head>
+    <body>
+        
+        <input type="checkbox" id="switchbox"/>
+        <label for="switchbox"><span>WiFi</span></label>
+        
+    </body>
+</html>

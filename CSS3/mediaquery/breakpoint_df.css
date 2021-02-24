@@ -1,0 +1,23 @@
+article {
+    background-color: silver;
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+    min-height: 15vh;
+}
+
+@media screen and (max-width: 800px) {
+    article {
+        float: none;
+        /* clear: both; = funktioniert nicht!! */
+        /* width: 100%; = funktioniert auch */
+        width: auto;
+        margin-right: 0 0 1rem 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        margin: 0;
+    }
+}

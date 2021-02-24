@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+html { 
+   box-sizing: border-box; 
+} 
+*, ::before, ::after { 
+   box-sizing: inherit; 
+}
+body {
+   font-family: 'Source Sans Pro', sans-serif;
+}
+main > article {
+   background-color: snow;
+   color: darkgrey;
+   border: 1px dotted red;
+   width: 640px;
+   margin: 0 auto;
+   padding: 1em;
+   box-shadow: 4px 4px 2px black;
+}
+
+main > article > div {
+   /* padding-top: 56.25%; */
+   padding-top: 100%;
+   position: relative;
+}
+
+main > article > div > figure {
+   background-image: url(../img/spoon.jpeg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100%;
+   position: absolute; 
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+   border: 1px solid tomato;
+   margin: 0;
+}
+
+

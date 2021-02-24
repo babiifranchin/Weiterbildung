@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+html { 
+   box-sizing: border-box; 
+} 
+*, ::before, ::after { 
+   box-sizing: inherit; 
+}
+body {
+   font-family: 'Source Sans Pro', sans-serif;
+   background-image: url(../img/bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+main > article {
+   background-color: snow;
+   color: darkgrey;
+   border: 1px dotted red;
+   width: 35vw;
+   margin: 0 auto;
+   padding: 1em;
+   box-shadow: 4px 4px 2px black;
+}
+main > article > figure {
+   margin: 0;
+}
+main > article img {
+   display: block;
+   margin: 0 auto;
+}

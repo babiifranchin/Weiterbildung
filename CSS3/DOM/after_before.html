@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pseudoelemten ::before und ::after</title>
+   <style>
+      p {
+         width: 50vw;
+         padding: 1em;
+         border: 1px solid tomato;
+         margin: 0 auto;
+         position: relative;
+      }
+      p::before {
+         content: "Inhalt davor";
+         color: teal;
+         display: block;
+         background-color: yellow;
+         border: 1px dotted greenyellow;
+      }
+      p::after {
+         content: "Inhalt danach";
+         color: purple;
+         display: block;
+         background-color: yellow;
+         border: 1px dotted greenyellow;
+         position: absolute;
+         right: 0;
+         top: -0.5em;
+      }
+      /* ::before {
+         content: "keine Ahnung";
+         background-color: khaki;
+      } */
+      span::before {
+         content: "oliver.vogt";
+      }
+      span::after {
+         content: "d-taube.de";
+      }
+      [required] {
+         outline: 2px solid tomato;
+      }
+      /* [required] + br::after {
+         content: "*";
+      } */
+      [data-email=ov]::before {
+         content: "oliver.vogt@ovmme.de"
+      }
+
+      ::selection {
+         color: darkred; background-color: yellow;
+      }
+   </style>
+</head>
+<body>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, labore! Error, iure esse nostrum, unde dignissimos facilis quas tempora quam assumenda non ipsam officiis voluptatem repellendus? Ipsam assumenda sequi laudantium!</p>
+   <address><span>@</span></address>
+   <form action="#" method="post">
+      <fieldset>
+         <label for="name">Name: </label><input type="text" name="name" required id="name"><br>
+         <input type="submit">
+      </fieldset>
+   </form>
+   <address data-email="ov"></address>
+</body>
+</html>

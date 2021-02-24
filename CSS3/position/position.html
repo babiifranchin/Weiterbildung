@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+   <head> 
+   <meta charset="utf-8"> 
+   <title>Klassisches Positionieren</title> 
+   <link rel="stylesheet" href="style.css" type="text/css">
+   <script>
+      window.addEventListener("load", getnwriteValues);
+      window.addEventListener("resize", getnwriteValues);
+      function getnwriteValues () {
+         var mmain_style = window.getComputedStyle(document.getElementsByTagName("main")[0]);
+         var mmyContainer_style = window.getComputedStyle(document.getElementById("blauerContainer"));
+         var mkleinerWeißerContainer_style = window.getComputedStyle(document.getElementById("kleinerWeißerContainer"));
+         document.getElementById("ida").innerHTML = window.innerWidth;         
+         document.getElementById("ida1").innerHTML = window.innerHeight;         
+         document.getElementById("id1").innerHTML = mmain_style.getPropertyValue("position");
+         document.getElementById("id2").innerHTML = mmain_style.getPropertyValue("top");
+         document.getElementById("id3").innerHTML = mmain_style.getPropertyValue("left");
+         document.getElementById("idb").innerHTML = mmain_style.getPropertyValue("width");         
+         document.getElementById("id4").innerHTML = mmyContainer_style.getPropertyValue("position");
+         document.getElementById("id5").innerHTML = mmyContainer_style.getPropertyValue("top");
+         document.getElementById("id6").innerHTML = mmyContainer_style.getPropertyValue("left"); 
+         document.getElementById("idc").innerHTML = mmyContainer_style.getPropertyValue("width");
+         document.getElementById("id7").innerHTML = mkleinerWeißerContainer_style.getPropertyValue("position");
+         document.getElementById("id8").innerHTML = mkleinerWeißerContainer_style.getPropertyValue("top");
+         document.getElementById("id9").innerHTML = mkleinerWeißerContainer_style.getPropertyValue("left");
+         document.getElementById("id10").innerHTML = mkleinerWeißerContainer_style.getPropertyValue("width");
+   /*   var html_style = window.getComputedStyle(document.getElementsByTagName("html")[0]);alert("html position: " + html_style.getPropertyValue("position"));    */    
+      }
+   </script>
+   <body> 
+      <header>
+         <h3>header</h3>
+         <h1>Beispiel: Positionieren</h1>
+         <h2>und genau sehen</h2>
+         <h3>was passiert und was nicht</h3>
+      </header>
+      <main>
+          <div id="blauerContainer">
+            <h3>blauerContainer</h3>
+            <div id="kleinerWeißerContainer">
+               <h3>kleinerWeißerContainer</h3>
+               <dl>
+                  <dt>viewport:</dt>
+                  <dd>width: <span id="ida">ida</span>;</dd>
+                  <dd>height: <span id="ida1">ida1</span>;</dd>
+                  <dt>main:</dt>
+                  <dd>position: <span id="id1">id1</span>;</dd>
+                  <dd>top: <span id="id2">id2</span>;</dd>
+                  <dd>left: <span id="id3">id3</span>;</dd>   
+                  <dd>width: <span id="idb">idb</span>;</dd>
+                  <dt>blauerContainer:</dt>
+                  <dd>position: <span id="id4">id4</span>;</dd>
+                  <dd>top: <span id="id5">id5</span>;</dd>
+                  <dd>left: <span id="id6">id6</span>;</dd>
+                  <dd>width: <span id="idc">idc</span>;</dd>
+                  <dt>kleinerWeißerContainer:</dt>
+                  <dd>position: <span id="id7">id7</span>;</dd>
+                  <dd>top: <span id="id8">id8</span>;</dd>
+                  <dd>left: <span id="id9">id9</span>;</dd>
+                  <dd>width: <span id="id10">id10</span>;</dd>                  
+               </dl>
+         </div>
+        </div>
+         <h3>main</h3>
+         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+         Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+         Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+         Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   
+         Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.   
+         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+         Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+         Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+      </main>
+     <footer>
+        <h3>footer</h3>   
+        <p> Eine Fußzeile ....</p>
+          und hier geht es weiter<br>
+          und dann ist auch schon das Ende erreicht
+     </footer>
+   </body> 
+</html>

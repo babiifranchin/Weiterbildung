@@ -1,0 +1,54 @@
+body {
+    margin-top: 5em;
+}
+
+#rotate, #scale, #skew {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    margin: 3rem;
+    padding: 1em .5em 0 .5em;
+    float: left;
+    box-sizing: border-box;
+    
+    width: 14rem;
+    height: 14rem;
+    
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    transform-origin: center;
+}
+
+#rotate, #skew {
+    border: 2px solid #b72285;
+    background-color: #ff8bbe;
+    background-image: linear-gradient(to bottom, #ff8bbe, #b72285);
+    box-shadow: 0 5px 8px rgba(183, 34, 133, 0.5);
+}
+
+#rotate {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#scale {
+    border: 2px solid orange;
+    background-color: #ffdc00;
+    background-image: linear-gradient(to bottom, #ffdc00, orange);
+    box-shadow: 0 5px 8px rgba(255, 165, 0, 0.5);
+    border-radius: 50%;
+    
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    transform: scale(2);
+}
+
+#skew {
+    -webkit-transform: skewX(-30deg) translate(7rem, 5rem);
+    -moz-transform: skewX(-30deg) translate(7rem, 5rem);
+    transform: skewX(-30deg) translate(7rem, 5rem);
+}

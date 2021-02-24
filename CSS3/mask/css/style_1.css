@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+html { 
+   box-sizing: border-box; 
+} 
+*, ::before, ::after { 
+   box-sizing: inherit; 
+}
+body {
+   font-family: 'Source Sans Pro', sans-serif;
+   background-image: url(../img/schnee.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+main > article {
+   background-color:snow;
+   color: darkgrey;
+   border: 1px dotted white;
+   width: 35vw;
+   min-height: 25vw;
+   margin: 0 auto;
+   padding: 1em;
+   box-shadow: 4px 4px 2px black;
+
+   background-image: url(../img/kerze.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   
+}
+main > article > figure {
+   margin: 0;
+}
+main > article img {
+   width: 100%;
+}

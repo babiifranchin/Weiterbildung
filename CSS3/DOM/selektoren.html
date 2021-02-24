@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta charset="UTF-8" />
+   <title>Selektoren-Test</title>
+   <link rel="stylesheet" href="selektorenstyle.css" >
+   <style>
+      article:first-child p:nth-child(4) {
+         color: tomato;
+      }
+
+      li:nth-child(2n+5) {
+         background-color: yellowgreen;
+      }
+
+      #schachbrett td {
+         border: 1px solid black;
+         height: 150px;
+         padding: 0;
+         width: 150px;
+      }
+
+      #schachbrett tr:nth-of-type(odd) > td:nth-of-type(even) {
+         background-color: black;
+      }
+
+      #schachbrett tr:nth-of-type(even) > td:nth-of-type(odd) {
+         background-color: black;
+      }
+
+      #schachbrett table {
+         border-collapse: collapse;
+         box-sizing: border-box;
+         border-spacing: 0;
+         display: table;
+         text-indent: 0;
+      }
+
+      a:link {
+         background-color: antiquewhite;
+         color: blue;
+      }
+
+      a:visited {
+         background-color: silver;
+         color: teal;
+      }
+
+      #nav ul {
+         padding-left: 0;
+         margin: 0;
+      }
+
+      #nav li {
+         display: table-cell;
+      }
+
+      #nav a {
+         background-color: whitesmoke;
+         color: darkblue;
+         display: inline-block;
+         font-weight: bold;
+         padding: 0.3em 1em;
+         text-decoration: none;
+      }
+
+      #nav a:focus {
+         outline: 1px solid green;
+      }
+
+      #nav a:hover {
+         background-color: cyan;
+         color: blue;
+      }
+
+   </style>
+</head>
+<body>
+   <header>
+      <h2>h2.1 - Header</h2>
+      <p>
+         p1 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>
+   </header>
+   <nav id="nav">
+      <ul>
+         <li><a href="#">Menü 1</a></li>
+         <li><a href="#">Menü 2</a></li>
+         <li><a href="#">Menü 3</a></li>
+         <li><a href="#">Menü 4</a></li>
+      </ul>
+   </nav>
+   <main>
+      <article>
+         <h1>h1 Hauptüberschrift</h1>
+         <p>p2 - Lorem ipsum dolor sit amet</p>
+         <h2>h2.2 - Überschrift</h2>
+         <p>
+            p3 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+         </p>
+         <p>
+            p4 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+         </p>
+         <p>
+            p5 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+         </p>         
+      </article>
+      <article>
+         <h2>h2.3 - Überschrift</h2>
+         <p>
+            p6 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+         </p>
+         <div>
+            <p>
+               p7 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+            </p>
+            <p>
+               p8 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+            </p>
+         </div>         
+      </article>
+   </main>
+   <aside>
+      <h2>h2.4 - Überschrift</h2>
+      <p>
+         p9 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>
+   </aside>
+   <section>
+      <!-- ul>li{Listenelement $}*10 -->
+      <ul>
+         <li>Listenelement 1</li>
+         <li>Listenelement 2</li>
+         <li>Listenelement 3</li>
+         <li>Listenelement 4</li>
+         <li>Listenelement 5</li>
+         <li>Listenelement 6</li>
+         <li>Listenelement 7</li>
+         <li>Listenelement 8</li>
+         <li>Listenelement 9</li>
+         <li>Listenelement 10</li>
+      </ul>
+   </section>
+   <section>
+      <!-- table>tr*8>td*8-->
+      <table id="schachbrett">
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+      </table>
+      
+   </section>
+   <footer>
+      <h2>h2.5 - footer</h2>
+      <p>
+         p10 - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="https://www.startpage.com">Startpage</a>
+         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+   </footer>
+</body>
+</html>

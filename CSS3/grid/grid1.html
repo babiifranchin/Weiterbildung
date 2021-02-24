@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CSS Grid</title>
+   <style>
+      body {
+         margin: 1em auto;
+         max-width: 1400px;
+         min-height: 100vh;
+         font-family: sans-serif;
+         color: #333333;
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+         grid-template-rows: auto 1fr 1fr auto;
+      }
+
+      header {
+         background: #F1F3F4;
+         border-color: #d5d5d5;
+         grid-column: 1 / 6;
+         grid-row: 1 / 2;
+      }
+
+      nav {
+         background: #fffbf0;
+         border-color: #e7c157;
+         grid-column: 1 / 2;
+         grid-row: 2 / 4;
+      }
+
+      article {
+         background: #ffede0;
+         border-color: #df6c20;
+         grid-column: 2 / 4;
+         grid-row: 2 / 4;
+      }
+
+      aside:first-of-type {
+         background: #ebf5d7;
+         border-color: #8db243;
+         grid-column: 5 / 6;
+         grid-row: 2 / 3;
+      }
+
+      aside:last-of-type {
+         background: #ebf5d7;
+         border-color: #8db243;
+         grid-column: 5 / 6;
+         grid-row: 3 / 4;
+      }
+
+      footer {
+         background: #e4ebf2;
+         border-color: #8a9da8;
+         grid-column: 1 / 6;
+         grid-row: 4 / 5;
+      }
+
+      header,
+      nav,
+      main,
+      article,
+      section,
+      aside,
+      footer {
+         border-radius: 0px 0.5em 0.5em;
+         border: 1px solid;
+         padding: .5em;
+         margin: .5em;
+      }
+
+      @media (max-width: 870px) {
+         body {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto 3em 2fr 1fr auto;
+         }
+            
+         header {
+            grid-column: 1 / 5;
+            grid-row: 1 / 2;
+         }
+
+         nav {
+            grid-column: 1 / 5;
+            grid-row: 2 / 3;
+            display: flex;
+            background-color: #88aa99;
+            padding: 0;
+            margin: 0;
+         }
+
+         nav > ul {
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+         }
+
+         article {
+            grid-column: 1 / 4;
+            grid-row: 3 / 5;
+         }
+
+         aside:first-of-type {
+            grid-column: 4 / 5;
+            grid-row: 3 / 4;
+         }
+
+         aside:last-of-type {
+            grid-column: 4 / 5;
+            grid-row: 4 / 5;
+         }
+
+         footer {
+            background: #e4ebf2;
+            border-color: #8a9da8;
+            grid-column: 1 / 5;
+            grid-row: 5 / 6;
+         }
+      }
+   </style>
+</head>
+<body>
+   <header> <img src="https://wiki.selfhtml.org/images/9/99/Selfhtml-beispiel-logo.png" alt="logo">
+      <h1>HTML5-Seite mit Grid Layout - 3</h1>
+   </header>
+   <nav>
+      <h2>Navigation</h2>
+      <ul>
+         <li><a href="#link_1.html">Startseite</a>
+         </li>
+         <li><a href="#link_2.html">Unterseite 1</a>
+         </li>
+         <li><a href="#link_3.html">Unterseite 2</a>
+         </li>
+         <li><a href="#link_4.html">Kontakt</a>
+         </li>
+      </ul>
+   </nav>
+   <aside id="news">
+      <h2>Top-News</h2>
+      <p>Gestern gab's Freibier!</p>
+   </aside>
+   <article>
+      <h2>CSS-basierte Grid Layouts</h2>
+      <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+         und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+         wie position, float oder clear nutzen zu müssen. </p>
+      <p>Dabei können Elemente beliebig innerhalb eines Rasters platziert werden, wenn gewünscht,
+         auch übereinander. </p>
+      <p>Grid Layout wird in allen modernen Browsern (und mit vendor-prefix -ms- auch in
+         IE10+11) unterstützt.</p>
+   </article>
+   <aside>
+      <h2>Weiterführende Links</h2>
+      <ul>
+         <li><a href="https://blog.selfhtml.org/">Blog</a>
+         </li>
+         <li><a href="https://wiki.selfhtml.org/">Doku</a>
+         </li>
+         <li><a href="https://forum.selfhtml.org/">Forum</a>
+         </li>
+      </ul>
+   </aside>
+   <footer> <a href="#kontakt.html">Kontakt</a>
+      <p>© 2017 SELFHTML</p>
+   </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding=“UTF-8"?>
+<!DOCTYPE users System "users.dtd">
+<user>
+    <loginname>
+        <username>
+            Donald
+        </username>
+        <email>
+            donald@duck.org
+        </email>
+    </loginname>
+    <password>
+        ganzgeheim
+    </password>
+    <secure>
+        <question>
+            Vorname Mutter
+        </question>
+        <answer>
+            Donaldine
+        </answer>
+    </secure>
+</user>

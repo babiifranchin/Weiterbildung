@@ -1,0 +1,57 @@
+html { 
+  background:transparent!important
+}  
+body{
+  margin: 10px auto;
+  max-width: 60em;
+  font-family: sans-serif;
+  color: #333333;
+}
+ 
+h1, main, svg {
+  border-radius: 0px 0.5em 0.5em;
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}
+ 
+h1 {
+  background: #F1F3F4 url("http://wiki.selfhtml.org/images/9/99/Selfhtml-beispiel-logo.png") 10px 5px no-repeat;
+  border-color: #d5d5d5;
+  padding-left:200px;
+}
+h1 span {
+  margin-left: 4.5em;
+}  
+main {
+  display: block;     /* für IE */	
+  background: #c4ced3;
+  border-color: #8a9da8;
+  min-height:400px;
+}
+form {
+  width: 40em;
+}
+input, label , select{
+  float: left;
+  width: 40%;
+}
+input, select {
+  margin: 0 0 1em .2em;
+  padding: .2em .5em; 
+  background-color: #fffbf0; 
+  border: 1px solid #e7c157;  
+}
+label { 
+  text-align: right;
+  line-height: 1.5;
+  color: tomato;
+}
+label::after {
+  content: ": ";
+}
+button {
+  float: right;
+  width: 25%;
+  margin-right: 2.3em;
+}

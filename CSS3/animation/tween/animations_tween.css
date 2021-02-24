@@ -1,0 +1,75 @@
+
+#circle {
+    margin: 0 auto;
+    padding: 0;
+    background-color: #ff8bbe;
+    background-image: radial-gradient(circle at 30% 25%, #ffe5f0, #ff8bbe 30%, #b72285);
+    box-shadow: 0 5px 8px rgba(183, 34, 133, 0.4);
+    border-radius: 50%;
+    
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: 0;
+
+    -webkit-animation: huepfen 0.7s ease-in infinite alternate;
+    -moz-animation: huepfen 0.7s ease-in infinite alternate;
+    animation: huepfen 0.7s ease-in infinite alternate;
+}
+
+@-webkit-keyframes huepfen {
+    100% {
+        top: 300px;
+        transform: scaleY(0.7);
+    }
+
+    75% {
+        transform: scaleY(1);
+    }
+}
+
+@-moz-keyframes huepfen {
+    100% {
+        top: 300px;
+        transform: scaleY(0.7);
+    }
+
+    75% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes huepfen {
+    100% {
+        top: 300px;
+        transform: scaleY(0.7);
+    }
+
+    75% {
+        transform: scaleY(1);
+    }
+}
+
+/* Reflexion */
+#circle::after {
+    content: "";
+    position: absolute;
+        top: 850px;
+        left: 0;
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    animation: huepfen-inverse 0.7s ease-in infinite alternate;
+
+    -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0 , 0) 50%);
+    -moz-mask-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0 , 0) 50%);
+    mask-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0 , 0) 50%);
+}
+
+@keyframes huepfen-inverse {
+    to {
+        top: 250px;
+    }
+}

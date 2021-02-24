@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+html { 
+   box-sizing: border-box; 
+} 
+*, ::before, ::after { 
+   box-sizing: inherit; 
+}
+body {
+   font-family: 'Source Sans Pro', sans-serif;
+   background-image: url(../img/bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+main > article {
+   background-color: cyan;
+   color: darkgrey;
+   border: 1px dotted red;
+   width: 35vw;
+   height: 25vw;
+   margin: 0 auto;
+   padding: 1em;
+   box-shadow: 4px 4px 2px black;
+   mix-blend-mode: normal;
+   background-image: url(../img/puzzle.jpeg);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-blend-mode: multiply;
+   
+}
+main > article > figure {
+   margin: 0;
+}
+main > article img {
+   display: block;
+   margin: 0 auto;
+   /* mix-blend-mode: darken; */
+}

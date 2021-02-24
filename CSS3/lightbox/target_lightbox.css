@@ -1,0 +1,103 @@
+figure, figcaption {
+    padding: 0;
+}
+
+figure {
+    width: auto;
+}
+
+figure img {
+    width: 100%; /* full width of figure */
+}
+
+figcaption {
+    font-size: .9rem;
+    font-style: italic;
+    margin-top: .5em;
+}
+
+.lightbox a {
+    text-decoration: none;
+}
+
+.lightbox:target a.lightbox_close {
+    border: 2px solid #fff;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 1.5rem;
+    line-height: .9em;
+    padding: .1em;
+    position: absolute;
+        right: 1em;    
+        top: 1em;
+    text-align: center;
+    width: 1.5rem;
+    z-index: 1;
+}
+
+
+.lightbox:target {
+    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    object-fit: contain;
+    position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    width: auto;
+    z-index: 1;
+}
+
+
+.lightbox:target img {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+        bottom: 0;    
+        left: 0;
+        right: 0;
+        top: 0;
+    width: auto;
+}
+
+.lightbox:target figcaption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 1rem;
+    font-style: normal;
+    margin: 0;
+    padding: 1em;
+    position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+}
+
+.lightbox {
+    -webkit-transition: background .4s ease-in-out;
+    -moz-transition: background .4s ease-in-out;
+    transition: background .4s ease-in-out;
+}
+
+p::first-letter {
+    color: #a00;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4em;
+    line-height: 1;
+    margin: 0 .4rem 0 0;
+}
+
+.my_image {
+    -webkit-mask: -webkit-linear-gradient(#fff, transparent);
+    mask: -webkit-linear-gradient(#fff, transparent);
+}

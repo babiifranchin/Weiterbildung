@@ -1,0 +1,79 @@
+body {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+section {
+    width: 66vw;
+    margin: 0 auto;
+}
+
+section > div {
+    padding: 0;
+    border: 1px solid black;
+    height: calc(66vw * 0.5);
+}
+
+#ball {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: darkred;
+    margin: 0 auto;
+    /* margin-top: calc((66vw * 0.5) - 10em); */
+    animation-name: huepf_transform;
+    animation-duration: 0.8s;
+    animation-delay: 500ms;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+    animation-iteration-count: 10;
+}
+
+section:hover #ball {
+    animation-play-state: paused;
+}
+
+@keyframes huepf {
+    0% {
+        margin-top: 0;
+        width: 10em;
+        height: 10em;
+    }
+
+    95% {
+        margin-top: calc((66vw*0.5) - 10em);
+        width: 10em;
+        height: 10em;
+    }
+
+    100% {
+        margin-top: calc((66vw*0.5) - 9em);
+        width: 11em;
+        height: 9em;
+    }
+}
+
+@keyframes huepf_transform {
+    0% {
+        /* margin-top: 0; */
+        transform:  translateY(0) scale(1, 1);
+        /* width: 10em;
+        height: 10em; */
+    }
+
+    95% {
+        /* margin-top: calc((66vw*0.5) - 10em); */
+        transform:  translateY(calc((66vw * 0.5) - 10em)) scale(1, 1);
+        /* width: 10em;
+        height: 10em; */
+    }
+
+    100% {
+        margin-top: calc((66vw*0.5) - 10em);
+        /* width: 11em;
+        height: 9em; */
+    }
+}

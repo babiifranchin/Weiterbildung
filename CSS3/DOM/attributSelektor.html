@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>attributSelektor.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/%3CUSERNAME%3E/Documents/markdown-pdf.css" type="text/css"><link rel="stylesheet" href="file:///c%3A/Users/oli/vscode/styles/markdown.styles/styles.css" type="text/css"><link rel="stylesheet" href="file:///home/%3CUSERNAME%3E/settings/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="attributSelektor.css" type="text/css">
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="attributselektoren">Attributselektoren</h2>
+<p>Attributselektoren wählen Elemente anhand des Vorhandenseins oder Wertes eines Attributs aus.</p>
+<p>CSS kennt drei Arten von Attributselektoren</p>
+<ol>
+<li>Attributpräsenz: <code>[name]</code></li>
+<li>Attributwert: <code>[name=wert]</code>, <code>[name~=wert]</code>, <code>[name|=wert]</code></li>
+<li>Teilübereinstimmung: <code>[name^=wert]</code>, <code>[name$=wert]</code>, <code>[name*=wert]</code></li>
+</ol>
+<h3 id="1-attributpr%C3%A4senz">1. Attributpräsenz</h3>
+<dl>
+   <dt><code>[name]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>, d. h. es werden Elemente selektiert, die das Attribut besitzen (unabhängig vom zugewiesenen Wert)</dd>
+</dl>
+<p><em><strong>Beispiel:</strong></em></p>
+<p><em>HTML-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Suchmaschinen<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.google.de"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Google Suchmaschine"</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.bing.com"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Bing Suchmaschine"</span>&gt;</span>Bing<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.startpage.com"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Startpage Suchmaschine"</span>&gt;</span>Startpage<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span><span class="hljs-symbol">&amp;uarr;</span> zurück zum Seitenanfang <span class="hljs-symbol">&amp;uarr;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+...
+</div></code></pre>
+<p><em>CSS-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-selector-tag">a</span> {
+      <span class="hljs-attribute">text-decoration</span>: none;
+      <span class="hljs-attribute">color</span>: blue;
+   }
+   <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[title]</span> {
+   <span class="hljs-attribute">text-decoration</span>: underline dotted tomato;
+   <span class="hljs-attribute">background-color</span>: lightgoldenrodyellow;
+   <span class="hljs-attribute">color</span>: green;
+   }
+...
+</div></code></pre>
+<div class="vorschau" id="attrpraesenz">
+<input type="checkbox" id="chk1"> <label for="chk1">Selektor <code>a[title]</code> (an/aus)</label>
+   <div class="ausgabe">
+      <h1>Suchmaschinen</h1>
+      <ul>
+         <li>
+            <a href="https://www.google.de" title="Google Suchmaschine">Google</a>
+         </li>
+         <li>
+            <a href="https://www.bing.com" title="Bing Suchmaschine">Bing</a>
+         </li>
+         <li>
+            <a href="https://www.startpage.com" title="Startpage Suchmaschine">Startpage</a>
+         </li>
+      </ul>
+      <div>
+         <a href="#">&uarr; zurück zum Seitenanfang &uarr;</a>
+      </div>
+   </div>
+</div>
+<h3 id="2-attributwert">2. Attributwert</h3>
+<dl>
+   <dt><code>[name<b>=</b>wert]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>, welches <b>exakt die Zeichenkette „wert“</b> als Attributwert enthält.</dd>
+   <dt><code>[name<b>~=</b>wert]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>, welches die Zeichenkette „wert“
+   im Wert des Attributs enthält und diese Zeichenkette durch ein Leerzeichen (davor und/oder danach) vom restlichen Inhalt des Wertes abgetrennt ist. Dabei kann die Zeichenkette wie folgt vorkommen: 
+   <ul>
+   <li><b>innerhalb</b> des Attributwerts mit einen <b>vorangehenden und nachfolgenden Leerzeichen</b></li>
+   <li><b>am Anfang</b> des Attributwerts mit einem <b>nachfolgenden Leerzeichen</b></li>
+   <li><b>am Ende</b> des Attributwerts mit einem <b>vorangehenden Leerzeichen</b></li>
+   <li>oder es entspricht <b>exakt dem Attributwert</b></li>
+</ul></dd>
+   <dt><code>[name<b>|=</b>wert]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>. Es kann <b>exakt die Zeichenkette „wert“</b> als Attributwert enthalten oder mit der Zeichenkette „wert“ beginnen und mit eimen Bindestrich („-“ / U+002D) vom restlichen Inhalt des Wertes abgetrennt ist.<br>
+   <b>Der Attributwert muss dabei immer mit der Zeichenkette „wert“ beginnen.</b></dd>
+</dl>
+<p><em><strong>Beispiel:</strong></em></p>
+<p><em>HTML-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-comment">&lt;!-- [name=wert] --&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Der [name=wert]-Selektor<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"name"</span>&gt;</span>Name: <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>E-Mail: <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Absenden"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+ 
+   <span class="hljs-comment">&lt;!-- [name~=wert]--&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Der [name~=wert]-Selektor<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Berlin: eine schöne Stadt"</span>&gt;</span>Berlin: eine schöne Stadt<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Berlin ist die Hauptstadt der BRD"</span>&gt;</span>Berlin ist die Hauptstadt der BRD<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Die Stadt Berlin besteht aus mehreren Stadteilen"</span>&gt;</span>Die Stadt Berlin besteht aus mehreren Stadteilen<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Das Brandenburger Tor steht in Berlin"</span>&gt;</span>Das Brandenburger Tor steht in Berlin<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Aktuelle News und Meldungen aus Berlin."</span>&gt;</span>Aktuelle News und Meldungen aus Berlin:<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Berlin"</span>&gt;</span>Berlin<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"berlin"</span>&gt;</span>berlin<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+   <span class="hljs-comment">&lt;!-- [name|=wert] --&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Der [name|=wert]-Selektor<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"de"</span>&gt;</span>Hallo Welt<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"de-ch"</span>&gt;</span>Grüezi Wäut<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-de"</span>&gt;</span>Hallo World<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"es"</span>&gt;</span>Holla Mundo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+...
+</div></code></pre>
+<p><em>CSS-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-selector-attr">[type=email]</span> {<span class="hljs-attribute">outline</span>: <span class="hljs-number">3px</span> solid tomato;}
+   <span class="hljs-selector-attr">[title~=Berlin]</span> {<span class="hljs-attribute">color</span>: tomato;}
+   <span class="hljs-selector-attr">[lang|=de]</span> {<span class="hljs-attribute">color</span>: tomato;}
+...
+</div></code></pre>
+<div class="vorschau" id="attrwert">
+   <input type="checkbox" id="chk2"> <label for="chk2">Selektor <code>[name=wert]</code> (an/aus)</label><br>
+   <input type="checkbox" id="chk3"> <label for="chk3">Selektor <code>[name~=wert]</code> (an/aus)</label><br>
+   <input type="checkbox" id="chk4"> <label for="chk4">Selektor <code>[name|=wert]</code> (an/aus)</label><br>
+   <div class="ausgabe">
+      <h3>Der [name=wert]-Selektor</h3>
+      <p><label for="name">Name: </label><input type="text" value="name" id="name"><br>
+         <label for="email">E-Mail: </label><input type="email" value="email" id="email"><br>
+         <input type="submit" value="Absenden"></p>
+      <h3>Der [name~=wert]-Selektor</h3>
+      <ul>
+         <li title="Berlin: eine schöne Stadt">Berlin: eine schöne Stadt</li>
+         <li title="Berlin ist die Hauptstadt der BRD">Berlin ist die Hauptstadt der BRD</li>
+         <li title="Die Stadt Berlin besteht aus mehreren Stadteilen">Die Stadt Berlin besteht aus mehreren Stadteilen</li>
+         <li title="Das Brandenburger Tor steht in Berlin">Das Brandenburger Tor steht in Berlin</li>
+         <li title="Aktuelle News und Meldungen aus Berlin.">Aktuelle News und Meldungen aus Berlin:</li>
+         <li title="Berlin">Berlin</li>
+         <li title="berlin">berlin</li>
+      </ul>
+      <h3>Der [name|=wert]-Selektor</h3>
+      <p lang="de">Hallo Welt</p>
+      <p lang="en">Hello World</p>
+      <p lang="de-ch">Grüezi Wäut</p>
+      <p lang="en-de">Hallo World</p>
+      <p lang="es">Holla Mundo</p>
+   </div>
+</div>
+<h3 id="3-teil%C3%BCbereinstimmung">3. Teilübereinstimmung</h3>
+<dl>
+   <dt><code>[name<b>^=</b>wert]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>, dessen Wert mit <b>„wert“ beginnt</b>.</dd>
+   <dt><code>[name<b>$=</b>wert]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>, dessen Wert mit <b>„wert“ endet</b>.</dd>
+   <dt><code>[name<b>*=</b>wert]</code></dt>
+   <dd>Repräsentiert ein Element mit einem Attribut <code>name</code>, dessen Wert mindestens einmal <b>„wert“ enthält</b>.</dd>
+</dl>
+<p><em><strong>Beispiel:</strong></em></p>
+<p><em>HTML-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Teilübereinstimmungen<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com/"</span>&gt;</span>Beispiellink<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> (fett)<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com/example.pdf"</span>&gt;</span>Link zu einem PDF-Dokument<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> (fett grün)<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://wiki.selfhtml.org/"</span>&gt;</span>Link zum selfhtml wiki<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> (fett kursiv)<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.org/WIKI/example.pdf/"</span>&gt;</span>Kein Selektor darf diesen Link stylen.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+...
+</div></code></pre>
+<p><em>CSS-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href^=<span class="hljs-string">"https://"</span>]</span> {
+      <span class="hljs-attribute">font-weight</span>: bold
+   }
+   
+   <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href$=<span class="hljs-string">".pdf"</span>]</span> {
+      <span class="hljs-attribute">color</span>: green
+   }
+   
+   <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href*=<span class="hljs-string">"wiki"</span>]</span> {
+      <span class="hljs-attribute">font-style</span>: italic
+   }
+   ...
+</div></code></pre>
+<div class="vorschau" id="attrteil">
+   <input type="checkbox" id="chk5"> <label for="chk5">Selektor <code>[name^=wert]</code> (an/aus)</label><br>
+   <input type="checkbox" id="chk6"> <label for="chk6">Selektor <code>[name$=wert]</code> (an/aus)</label><br>
+   <input type="checkbox" id="chk7"> <label for="chk7">Selektor <code>[name*|*=wert]</code> (an/aus)</label><br>
+   <div class="ausgabe">
+   <h1>Teilübereinstimmungen</h1>
+   <ul>
+      <li><a href="https://example.com/">Beispiellink</a> (fett)</li>
+      <li><a href="https://example.com/example.pdf">Link zu einem PDF-Dokument</a> (fett grün)</li>
+      <li><a href="https://wiki.selfhtml.org/">Link zum selfhtml wiki</a> (fett kursiv)</li>
+      <li><a href="http://example.org/WIKI/example.pdf/">Kein Selektor darf diesen Link stylen.</a>
+      </li>
+   </ul>
+   </div>
+</div>
+<h3 id="anmerkungen---case-insensitive-modifier">Anmerkungen - Case-insensitive modifier</h3>
+<p>Mittlerweile unterstützen die meisten Browser den sog. <em><strong>Case-insensitive modifier</strong></em>, mit dem man die Berücksichtigung von Groß-/Kleinschreibung deaktivieren kann.</p>
+<dl>
+   <dt><code>[attr <i>operator</i> wert <b>i</b>]</code></dt>
+   <dd>
+    Wenn ein <code>i</code> vor der schließenden Klammer eingefügt wird, wird ein Vergleich ohne Berücksichtigung der Groß-/Kleinschreibung (für Zeichen innerhalb des ASCII Bereichs) durchgeführt.
+    </dd>
+</dl>
+<p><em><strong>Beispiel:</strong></em></p>
+<p><em>HTML-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.org/WIKI/example.pdf/"</span>&gt;</span>Jetzt kann der Selektor diesen Link stylen.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+...
+</div></code></pre>
+<p><em>CSS-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href*=<span class="hljs-string">"wiki"</span> i]</span> {
+      <span class="hljs-attribute">font-style</span>: italic;
+      <span class="hljs-attribute">font-weight</span>: bold;
+   }
+...
+</div></code></pre>
+<div class="vorschau" id="casemodi">
+   <input type="checkbox" id="chk9"> <label for="chk9">Selektor <code>[href*="wiki" i]</code> (an/aus)</label><br>
+   <div class="ausgabe">
+      <p><a href="http://example.org/WIKI/example.pdf/">Jetzt kann der Selektor diesen Link stylen.</a></p>
+   </div>
+</div>
+<h3 id="anmerkungen---default-attribute">Anmerkungen - default Attribute</h3>
+<p>Attributselektoren wirken i. R. nur auf Attribute, die im Quelltext geschrieben wurden. In HTML (und auch XML) gibt es Elemente die Attribute automatisch (per default) besitzen, deren Wert vordefiniert ist. Bei den meisten Browsern werden diese nicht selektiert.</p>
+<p><em><strong>Beispiel:</strong></em></p>
+<p><em>HTML-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Nicht explizit angegebene Attribute<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Vorname<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"vorname"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Nachname<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"nachname"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+...
+</div></code></pre>
+<p><em>CSS-Fragment</em></p>
+<pre class="hljs"><code><div>...
+   <span class="hljs-selector-attr">[type=text]</span> {
+        <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid tomato;
+   }
+...
+</div></code></pre>
+<div class="vorschau" id="defaultattr">
+   <input type="checkbox" id="chk8"> <label for="chk8">Selektor <code>[type=text]</code> (an/aus)</label><br>
+   <div class="ausgabe">
+      <h2>Nicht explizit angegebene Attribute</h2>
+      <section>
+         <p><label>Vorname</label> <input name="vorname"></p>
+         <p><label>Nachname</label> <input type="text" name="nachname"></p>
+      </section>
+   </div>
+</div>
+<hr>
+<p>Quellen:</p>
+<ul>
+<li><a href="https://wiki.selfhtml.org/wiki/CSS/Selektoren/Attributselektor">selfhtml wiki</a></li>
+<li><a href="https://developer.mozilla.org/de/docs/Web/CSS/Attributselektoren">MDN</a></li>
+<li><a href="https://www.w3schools.com/css/css_attribute_selectors.asp">w3schools</a></li>
+</ul>
+
+</body>
+</html>

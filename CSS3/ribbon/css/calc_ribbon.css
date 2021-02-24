@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.box {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+.box_heading {
+    background: url(../images/ribbon_right.png) no-repeat right top;
+    background-size: auto 100%;
+
+    color: #fff;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    
+    font-size: 1.5rem; /* sollte in die Banderole passen */
+    line-height: 1.5em; /* Text in der Banderole vertikal zentrieren */
+    margin: 0 0 1rem -1.8rem; /* Banderole ragt links aus der Box */
+    padding-right: 1.375rem;
+
+    width: -webkit-calc(100% + 1.25rem + 1.8rem + 1.375rem);
+    width: -moz-calc(100% + 1.25rem + 1.8rem + 1.375rem);
+    width: calc(100% + 1.25rem + 1.8rem + 1.375rem);
+}
+
+.box_heading span {
+    background: url(../images/ribbon_left.png) no-repeat;
+    background-size: auto 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    display: block;
+    height: 3.0625rem; /* Höhe der PNGs (49px) */
+    padding-left: 1.8rem;
+}

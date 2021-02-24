@@ -1,0 +1,238 @@
+body {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+/* Konfiguration des Carousels */
+#carousel {
+  --carouselBreite: 50vw;
+  --carouselPadding: 2em;
+  --carouselRatio: 56.25%;
+}
+
+#carousel {
+  width: var(--carouselBreite);
+  margin: 0 auto;
+}
+#carousel figure {
+  margin: 0;
+}
+#carousel > figure {
+  /* padding: 1em; */
+  background-color: darkgray;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  clip-path: inset(var(--carouselPadding) var(--carouselPadding) var(--carouselPadding) var(--carouselPadding));
+}
+#carousel > figure::before {
+  content: "";
+  display: block;
+  width: 0;
+  /* border: 1px solid lightgreen; */
+  padding-top: var(--carouselRatio);
+}
+#carousel > figure > figure {
+  position: absolute;
+  top: var(--carouselPadding);
+  right: var(--carouselPadding);
+  bottom: var(--carouselPadding);
+  left: var(--carouselPadding);
+  /* width: calc((100% - 1em) * 0.9); */
+  /* filter: blur(1px) grayscale(0.2); */
+  /* clip-path: inset(0px 0px 0px 0px); */
+}
+#carousel > figure > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#carousel > figure > figure > figcaption {
+  position: absolute;
+  bottom: 2em;
+  padding: 0.5em 1em;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2), 1px -1px rgba(0, 0, 0, 0.2), -1px -1px rgba(0, 0, 0, 0.2), -1px 1px rgba(0, 0, 0, 0.2);
+  /* width: 100%; */
+  left: 0;
+  right: 0;
+}
+#carousel > figure > input {
+  display: none;
+}
+#carousel > figure > input:checked + figure {
+  z-index: 10;
+  filter: blur(0) grayscale(0);
+  transition: 0.3s ease-in;
+}
+#carousel > figure > label {
+  width: 0.8em;
+  height: .8em;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 0.5em;
+  cursor: pointer;
+  user-select: none;
+}
+#carousel > figure > label:hover {
+  background-color: violet;
+  border-color: violet;
+}
+#carousel > figure > label:active {
+  background-color: yellowgreen;
+  border-color: yellowgreen;
+}
+
+/* Animationen */
+@keyframes slider {
+  0% {
+    transform: translateX(-100%) scale(1);
+    filter: blur(1px);
+    z-index: 30;
+  }
+  4.166667% {
+    transform: translateX(0) scale(1.1);
+    filter: blur(1px);
+  }
+  8%{
+    transform: translateX(0) scale(1.1);
+    filter: blur(0);
+  }
+  16.66667% {
+    transform: translateX(0) scale(1);
+    z-index: 30;
+  }
+  21.83333% {
+    transform: translateX(100%) scale(1);
+    z-index: 20;
+  }
+  100% {
+    z-index: -1;
+    filter: blur(0);
+  }
+}
+
+#bild01 {
+  animation: slider 24s 10 linear;
+}
+
+#bild02 {
+  animation: slider 24s 4s 10 linear;
+}
+
+#bild03 {
+  animation: slider 24s 8s 10 linear;
+}
+
+#bild04 {
+  animation: slider 24s 12s 10 linear;
+}
+
+#bild05 {
+  animation: slider 24s 16s 10 linear;
+}
+
+#bild06 {
+  animation: slider 24s 20s 10 linear;
+}
+
+/* deaktiviert 
+#carousel > figure > label::before {
+  content: "\2329";
+  position: absolute;
+  z-index: 20;
+  top: calc(var(--carouselPadding) / 2);
+  bottom: calc(var(--carouselPadding) / 2);
+  left: calc(var(--carouselPadding) / 2);
+  width: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  filter: opacity(0);
+  transition: 0.15s linear;
+}
+#carousel > figure > label::after {
+  content: "\232A";
+  position: absolute;
+  z-index: 20;
+  top: calc(var(--carouselPadding) / 2);
+  bottom: calc(var(--carouselPadding) / 2);
+  right: calc(var(--carouselPadding) / 2);
+  width: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  filter: opacity(0);
+  transition: 0.15s linear;
+} */
+
+
+#bild06 > img {
+  object-position: 50% 80%;
+}
+
+/* Beispiel zunächst ohne SCSS */
+/* Selektoren als Ergebnis der SCSS-Loops übernommen */
+
+#pag01:checked ~ label[for=pag01],
+#pag02:checked ~ label[for=pag02],
+#pag03:checked ~ label[for=pag03],
+#pag04:checked ~ label[for=pag04],
+#pag05:checked ~ label[for=pag05],
+#pag06:checked ~ label[for=pag06] {
+  color: white;
+  background-color: white;
+}
+
+#pag01:checked ~ [for=pag06]::before,
+#pag02:checked ~ [for=pag01]::before,
+#pag03:checked ~ [for=pag02]::before,
+#pag04:checked ~ [for=pag03]::before,
+#pag05:checked ~ [for=pag04]::before,
+#pag06:checked ~ [for=pag05]::before {
+  z-index: 30;
+}
+
+#pag01:checked ~ [for=pag02]::after,
+#pag02:checked ~ [for=pag03]::after,
+#pag03:checked ~ [for=pag04]::after,
+#pag04:checked ~ [for=pag05]::after,
+#pag05:checked ~ [for=pag06]::after,
+#pag06:checked ~ [for=pag01]::after {
+  z-index: 30;
+}
+
+
+/* #pag01:checked ~ [for=pag06]:hover::before,
+#pag02:checked ~ [for=pag01]:hover::before,
+#pag03:checked ~ [for=pag02]:hover::before,
+#pag04:checked ~ [for=pag03]:hover::before,
+#pag05:checked ~ [for=pag04]:hover::before,
+#pag06:checked ~ [for=pag05]:hover::before {
+  filter: opacity(1);
+}
+
+#pag01:checked ~ [for=pag02]:hover::after,
+#pag02:checked ~ [for=pag03]:hover::after,
+#pag03:checked ~ [for=pag04]:hover::after,
+#pag04:checked ~ [for=pag05]:hover::after,
+#pag05:checked ~ [for=pag06]:hover::after,
+#pag06:checked ~ [for=pag01]:hover::after {
+  filter: opacity(1);
+} */
+

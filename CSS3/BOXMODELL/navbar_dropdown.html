@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Navbar</title>
+      <style>
+         body {
+            background-color: seashell;
+            margin: 0;
+         }
+
+         /* nav {
+            border: 1px solid yellow;
+            background-color: darkgray;
+            font-size: 2em;
+         } */
+
+         #navbar {
+            background-color: darkgray;
+            font-size: 1.3em;
+            text-align: right;
+            line-height: 0;
+         }
+         ul {
+            border: 1px solid tomato;
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            line-height: normal;
+            list-style-type: circle;
+            list-style-position: outside;
+            list-style-type: "\1F602";
+            /* list-style-image: url('muelleimer.png'); */
+            list-style: "\1F601";
+            list-style: none;
+            padding-left: 0;
+         }
+
+         li {
+            /* border: 1px dotted green; */
+            /* list-style-type: square; */
+            display: table-cell;
+            /* padding: 0.5em; */
+            position: relative;
+            z-index: 30;
+         }
+
+         header {         
+            background-color: seashell;
+            height: 5em;
+         }
+
+         a {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            padding: .5em;
+            white-space: nowrap;
+         }
+
+         a:hover {
+            background-color:orange;
+         }
+         
+         /* li:hover {
+            background-color: orange;
+            cursor: pointer;
+         } */
+
+         .active {
+            background-color: #4caf50;
+            cursor: default;
+         }
+
+         .active:hover {
+            background-color: #4caf50;
+         }
+
+         .submenu {
+            background-color: black;
+            display: none;
+            /* left: -100vw; */
+            position: absolute;
+            /* visibility: hidden; */
+         }
+
+         .submenu > li {
+            display: block;
+         }
+
+         li:hover > .submenu {
+            display: block;
+         }
+
+         .smright {
+            right: 0;
+         }
+
+         h1 {
+            background-color: honeydew;
+            outline: 1px solid olive;
+            position: relative;
+            z-index: 20;
+         }
+
+         figure {
+            background-color: snow;
+            border: 1px solid tomato;
+            left: 50%;
+            /* margin: 1em auto; */
+            position: relative;
+            text-align: center;
+            transform: translateX(-50%);
+            width: 17em;
+         }
+
+         img {
+            width: 15em;
+         }
+
+      </style>
+   </head>
+   <body>
+      <header>
+
+      </header>
+      <nav id="navbar">
+         <ul>
+            <li>
+               <a href="#" >Menü 1</a>
+            </li>
+            <li>
+               <a href="#">Menü 2</a>
+               <ul class="submenu">
+                  <!-- ul>li*5>a[href="#"]{Submenü $} -->
+                  <li><a href="#">Submenü 1</a></li>
+                  <li><a href="#">Submenü 2</a></li>
+                  <li><a href="#">Submenü 3</a></li>
+                  <li><a href="#">Submenü 4</a></li>
+                  <li><a href="#">Submenü 5</a></li>
+               </ul>
+            </li>
+            <li><a href="#" class="active">Menü 3</a></li>
+            <li><a href="#">Menü 4</a></li>
+            <li>
+               <a href="#">Menü 5</a>
+               <ul class="submenu smright">
+                  <!-- ul>li*5>a[href="#"]{Submenü $} -->
+                  <li><a href="#">Submenü 1</a></li>
+                  <li><a href="#">Submenü 2</a></li>
+                  <li><a href="#">Submenü 3</a></li>
+            </li>
+         </ul>
+      </nav>
+      <main>
+         <h1>Unsere Navbar</h1>
+         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolor eligendi recusandae dolorum quo, a repudiandae aliquam. Impedit assumenda commodi accusantium, fugit architecto corporis aut, aperiam esse, vitae magnam laudantium.
+         Nemo, doloremque? Nihil eius aperiam exercitationem in modi voluptate sint doloremque, ratione, ea, ab repellat iure ut quae! Minima, ipsum quam nostrum natus illum facere autem explicabo quibusdam rerum iusto?
+         Qui similique consequuntur perferendis hic. Molestias aliquid reiciendis illo voluptatum ipsum, maiores ipsam delectus dolore corrupti doloribus fuga laboriosam asperiores incidunt recusandae ullam cupiditate, voluptate dolores! Minima laborum voluptatum maxime?
+         Consectetur dicta tempore, fuga numquam est, ipsum repellat voluptatum consequatur in officiis id dolorem, voluptatibus reprehenderit totam sunt ea nobis cupiditate? Distinctio laboriosam aperiam obcaecati quidem beatae repellendus culpa quibusdam?
+         <figure>
+            <img src="../img/bier_l.png" alt="ein Bier">
+            <figcaption>ein schöner Bierkrug</figcaption>
+         </figure>
+         Modi eos, quis quos veniam ex, voluptas aperiam dolorem dolor odio quisquam laboriosam expedita! Ab voluptas impedit quos cum voluptates omnis autem exercitationem in corrupti dolorum nihil, esse nostrum magnam!
+         Nobis maiores saepe non sequi explicabo corporis quam inventore repellendus nostrum atque ex voluptates expedita officia ad laudantium omnis temporibus, voluptatibus autem. Enim ad recusandae suscipit neque omnis corrupti in.
+         Dignissimos in iure repellat est a rem et commodi deserunt ad. Delectus, numquam dignissimos culpa temporibus recusandae vel ipsum non excepturi tenetur vitae exercitationem quia ullam ut modi, nostrum labore.
+         Repellendus esse excepturi natus, iure deserunt earum dignissimos exercitationem fuga odio recusandae. Asperiores ipsam illum, magnam aliquid eveniet natus quidem assumenda. Quod, dolorum earum. Excepturi cum laborum animi ducimus perferendis.
+         Iure tenetur voluptatum, esse soluta mollitia, facere dolorem minus atque necessitatibus quidem inventore possimus corporis fugiat modi? Rerum, reiciendis beatae voluptas rem atque quidem ipsum asperiores sapiente esse ea exercitationem.
+         A deserunt illo voluptas alias hic sint id, deleniti numquam voluptate magnam ad repellat similique qui eveniet in explicabo nihil officia reprehenderit libero sapiente facere, tempore sunt. Voluptatum, quaerat laboriosam.
+      </main>
+   </body>
+</html>

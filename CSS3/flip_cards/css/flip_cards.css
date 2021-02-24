@@ -1,0 +1,150 @@
+/* Design: */
+
+body {
+    position: relative;
+}
+
+#flip_front,
+#flip_back {
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.3);
+    background-color: #fafafa;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+#flip_front {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+#flip_back {
+    -webkit-transform: rotateY(-179deg);
+    -moz-transform: rotateY(-179deg);
+    transform: rotateY(-179deg);
+}
+
+#flip_panel {
+    margin: 0 auto;
+    width: 70%;
+
+    -webkit-perspective: 1300px;
+    -moz-perspective: 1300px;
+    perspective: 1300px;
+}
+
+#flip_panel h1,
+#flip_panel p {
+    margin-bottom: 1rem;
+}
+
+#flip_panel h1 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-family: Georgia, Times, serif;
+    font-style: italic;
+}
+
+#flip_panel p {
+    line-height: 1.5em;
+}
+
+#flip_panel :last-child {
+    margin: 0;
+}
+
+#flip_panel a {
+    color: #157dba;
+}
+
+#flip_panel .logo {
+    float: right;
+    margin: 0 0 1em 1em;
+    max-width: 40%;
+}
+
+#flip_panel .flip_action {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#flip_panel .info_button {
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: Georgia, Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.8rem;
+    
+    width: 1.8rem;
+    height: 1.8rem;
+    display: block;
+    
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+#flip_panel .info_button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#flip_panel .button {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 3px 15px;
+    background: linear-gradient(#31a4ec, #157dba);
+    border: 1px solid #1b6091;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#flip_panel .button:hover {
+    background-image: linear-gradient(#33aafc, #158bd4);
+}
+
+#flip_panel:target #flip_front {
+    -webkit-transform: rotateY(179deg);
+    -moz-transform: rotateY(179deg);
+    transform: rotateY(179deg);
+}
+
+#flip_panel:target #flip_back {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+/* Flip: */
+
+#flip_panel,
+#flip_front,
+#flip_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+#flip_panel {
+    margin: 0 auto;
+    width: 70%;
+}

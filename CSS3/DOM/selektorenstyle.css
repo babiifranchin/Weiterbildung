@@ -1,0 +1,16 @@
+body {
+   margin: 0; 
+   padding: 0.5em; 
+   font-family: verdana, arial, sans-serif; 
+   font-size: 1em;
+}
+
+header, nav, main, aside, footer {
+   border: 1px dotted blue;
+   margin: 0.5em 0;
+}
+
+div {
+   border: 1px dotted green;
+   margin: 2px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo Element</title>
+    <style>
+        p {
+            background-color: thistle;
+            border: 1px solid tomato;
+            width: 25em;
+        }
+
+        p::after {
+            content: "ich bin ein neuer Inhalt";
+            color: blue;
+            display: block;
+        }
+
+        p::before {
+            content: "ich bin ein neuer Inhalt davor";
+            color: purple;
+            display: block;
+        }
+
+        a::before {
+            content: "=> ";
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quas necessitatibus delectus unde! Commodi ex aperiam, maxime modi dignissimos quasi quisquam veniam sapiente hic eum blanditiis vitae consequuntur quas quos?
+    </p>
+    <div>
+        <a href="#">ein Link</a>
+    </div>
+</body>
+</html>

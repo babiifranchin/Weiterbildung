@@ -1,0 +1,84 @@
+body {
+   font-size: 1.1em;
+   line-height: 1.3;
+}
+
+.vorschau {
+   border-radius: 0.5em;
+   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+   margin-top: 2em;
+   padding: 1.5em;
+   padding-top: 2em;
+   background-color:ghostwhite;
+   position: relative;
+}
+.vorschau::before {
+   content: "Vorschau:";
+   position: absolute;
+   left: 1.5em;
+   top: -1em;
+   background-color: gainsboro;
+   color: white;
+   font-weight: bold;
+   padding: 0.3em 1em;
+   border-radius: 0.3em;
+}
+.vorschau h1 {
+   border-bottom: none;
+}
+
+.vorschau > label:last-of-type {
+   display: inline-block;
+   padding-bottom: 1em;
+}
+
+.ausgabe {
+   background-color: white;
+   padding: 1em 0.5em;
+}
+
+dd:not(:last-of-type) {
+   margin-bottom: 0.5em;
+}
+
+code {
+   color:mediumvioletred !important; /* oh no */
+}
+
+#attrpraesenz a {
+   text-decoration: none;
+   color: blue;
+}
+#attrpraesenz input:checked ~ .ausgabe a[title] {
+  text-decoration: underline dotted tomato;
+  background-color: yellow;
+  color: green;
+}
+
+#attrwert p[lang] {padding-left: 1em; margin:0; }
+#attrwert p br {line-height: 2;}
+#chk2:checked ~ .ausgabe [type=email] {outline: 3px solid tomato;}
+#chk3:checked ~ .ausgabe [title~=Berlin] {color: tomato;}
+#chk4:checked ~ .ausgabe p[lang|=de] {color: tomato;}
+
+#chk5:checked ~ .ausgabe a[href^="https://"] {
+   font-weight: bold
+}
+#chk6:checked ~ .ausgabe a[href$=".pdf"] {
+   color: green
+}
+#chk7:checked ~ .ausgabe a[href*="wiki"] {
+   font-style: italic
+}
+
+#defaultattr p {padding-left: 1em; padding-bottom: 0.3em; margin:0; }
+#chk8:checked ~ .ausgabe [type=text] {
+      outline: 2px solid tomato;
+}
+
+#casemodi p {padding-left: 1em; padding-bottom: 0.3em; margin:0; }
+#chk9:checked ~ .ausgabe a[href*="wiki" i] {
+   font-style: italic;
+   font-weight: bold;
+}
+

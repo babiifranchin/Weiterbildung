@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import url(https://fonts.google.com/specimen/Roboto#standard-styles);
+
+html {
+    
+}
+section{
+    font-size: 1em;
+    color: tomato;
+}
+
+h1 {
+    font-size: 2em;
+    color: gray;
+    letter-spacing: normal;
+    word-spacing: 0.5em;
+    text-decoration-line: line-through overline;
+    text-decoration-style: wavy;
+    /* text-shadow: 2px 2px 4px blueviolet; */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+p {
+    /* font-size:  1.5em; */
+    font-size: 150%;
+    /* color: skyblue; */
+    /* font-style: oblique; */
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.2em;
+    /* font: 100 150%/1.1em Georgia, 'Times New Roman', Times, serif; */
+    /* text-decoration-skip: ; */
+
+}

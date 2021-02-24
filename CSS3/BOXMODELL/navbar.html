@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: seashell;
+        }
+
+        /* nav {
+            background-color: darkgray;
+            font-size: 1.5em;
+        } */
+
+        #navbar {
+            background-color: darkgray;
+            font-size: 2em;
+            height: 2em;
+        }
+
+        ul {
+            border: 1px solid tomato;
+            /* list-style: outside "\1F601"; */
+            /* list-style-image: url(../../CSS3/muelleimer.png); */
+            /* list-style-image: url('muelleimer.png'); */
+            /* list-style-position: inside; */
+            /* list-style-type: "\1F602"; */
+            list-style-type: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-left: 0;
+            /* text-align: center; */
+        }
+
+        li {
+            /* border: 1px dotted green; */
+            display: inline-block;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5em;
+        }
+
+        a:hover {
+            background-color: black;
+        }
+        
+        /* li:hover {
+            background-color: orange;
+            cursor: pointer;
+        } */
+
+        .active {
+            background-color: #4caf50;
+            cursor: default;
+        }
+
+        .active:hover {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#" >Menü 1</a></li>
+            <li><a href="#">Menü 2</a></li>
+            <li><a href="#" class="active">Menü 3</a></li>
+            <li><a href="#">Menü 4</a></li>
+            <li><a href="#" >Menü 5</a></li>
+        </ul>
+    </nav>
+    hallo Welt!
+</body>
+</html>

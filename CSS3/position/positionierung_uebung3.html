@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #aussen, #innen {
+            border: 1px solid black;
+            margin: 0;
+            padding: 0;
+        }
+
+        #aussen {
+            background-color: yellow;
+            height: 200px;
+            position: relative;
+            width: 200px;
+        }
+
+        #innen {
+            background-color: red;
+            height: 150px;
+            position: absolute;
+                right: -50px;
+                top: -50px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="aussen">
+        <p id="innen"></p>
+    </div>
+</body>
+</html>

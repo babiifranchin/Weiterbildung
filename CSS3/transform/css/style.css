@@ -1,0 +1,81 @@
+/* eigene Style-Angaben */
+html { 
+   box-sizing: border-box; 
+} 
+*, ::before, ::after {
+   box-sizing: inherit; 
+}
+body {
+   margin: 0;
+   padding: 0;
+}
+main {
+   display: flex;
+   flex-direction: column;
+   
+}
+h1 {
+   margin: 0;
+}
+.cardbox {
+   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+   padding: 0.7rem 1rem;
+   margin: 1rem;
+}
+.testarea {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+.testarea > * {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   width: 42vw;
+   height: 42vw;
+   border: 1px solid black;
+   border-radius: 0.5rem;
+}
+.transobj {
+   width: 30%;
+   height: 15%;
+   /* background-color: tomato; */
+   border: 2px solid red;
+   padding: 0.5rem;
+}
+.transobj img {
+   float: left;
+   width: 20%;
+   margin: 1rem 1rem 1rem 0;
+}
+.clearfix::after {
+   content: ".";
+   display: block;
+   width: 0;
+   height: 0;
+   font-size: 0;
+   visibility: hidden;
+}
+.original, .transformed {
+   position: relative;
+   background: url(../img/grid.png)
+}
+.original::after {
+   content: "Original";
+   display: block;
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   color: blue;
+}
+.transformed::after {
+   content: "Transformiert";
+   display: block;
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   color: red;
+}

@@ -1,0 +1,53 @@
+p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+input[type=radio] {
+   display: none;
+}
+
+.tabs {
+    position: relative;
+}
+
+.tabs .tab {
+    float: left;
+    margin-right: .3em;
+}
+
+.tabs .tab label.tab_nav {
+    color: #1f62d7;
+    text-decoration: none;
+    padding: 0.4em 1em 0 1em;
+    display: block;
+    height: 2em;
+    background: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    position: relative;
+    top: 1px;
+
+    z-index: 10;
+}
+
+.tabs .tab .tab_content {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    background: #fff;
+    
+    position: absolute;
+    top: 2em;
+    left: 0;
+    right: 0;
+} 
+
+input[type=radio]:checked ~ .tab_content {
+    background-color: white;
+    border-bottom: none;
+}

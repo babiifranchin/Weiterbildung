@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta charset="UTF-8" />
+   <title>Login-Formular</title>
+   <link rel="stylesheet" href="loginstyle.css" >
+   <style>
+      /* hier css inline */
+   </style>
+</head>
+<body>
+   <h2>Registrierungsformular für Login</h2>
+   <form action="#" onreset="this.reset();" method="post">
+      <fieldset>
+         <legend>loginname</legend>
+         <label for="name">Benutzername</label>
+         <input type="text" id="name" name="name" placeholder="Name für Login" size="12" required>
+         <label for="email">E-Mail</label>
+         <input type="email" id="email" name="email" placeholder="E-Mail für Login" size="12" required>
+      </fieldset>
+      <fieldset>
+         <legend>password</legend>
+         <label for="pwd" id="meineID">Passwort</label>
+         <input type="password" id="pwd" name="passwd" placeholder="Password" size="12" required>
+         <label for="pwdwh">Wiederholung</label>
+         <input type="password" id="pwdwh" name="passwdwh" placeholder="Password Wiederholung" size="12" required>   
+      </fieldset>
+      <fieldset>
+         <legend>secure</legend>
+         <label for="frage">Sicherheitsfrage</label>
+         <select size="1" id="frage" name="frage" required>
+            <option>Mädchenname der Mutter</option>
+            <option>Erstes Auto</option>
+            <option>Lieblingsessen</option>   
+            <option>frei - keine Motto</option>                  
+         </select>
+         <label for="antwort">Antwort</label>
+         <input type="text" id="antwort" name="antwort" placeholder="Antwort zur Sicherheitsfrage" size="12" required>         
+      </fieldset>
+      <fieldset>
+         <legend>action</legend>      
+         <button type="reset">zurücksetzen</button>
+         <button type="submit">registrieren</button>      
+      </fieldset>
+   </form>
+</body>
+</html>

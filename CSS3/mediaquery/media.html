@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: yellow;
+        }
+
+        @media screen and (orientation: landscape) {
+            h1 {
+                color: tomato;
+            }
+
+            p {
+                border: 1px solid teal;
+            }
+        }
+
+        @media print and (orientation: landscape) {
+            h1 {
+            color: green;
+            }
+
+            p {
+                color: indigo;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) and (max-width: 1500px) {
+            h1 {
+                background-color: yellow;
+            }
+        }
+
+        @media (width: 1280px) {
+            h1 {
+                background-color: lightpink;
+            }
+        }
+
+        @media only screen and (min-width: 1280px) {
+            h1 {
+                background-color: orange;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Überschrift</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam optio, provident repellendus natus expedita quos architecto, quidem voluptas, error nostrum exercitationem eos aspernatur placeat minima ipsa quaerat maiores sapiente corporis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quaerat quod illum vel animi dolorum ratione vitae accusantium dignissimos. Autem aliquam, quis corrupti recusandae earum quibusdam cum facilis quidem itaque.</p>
+    </main>
+</body>
+</html>

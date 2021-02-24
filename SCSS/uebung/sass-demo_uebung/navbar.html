@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Navbar</title>
+   <style>
+      body {
+         margin: 0;
+      }
+      /* nav {
+         border: 1px solid yellow;
+         background-color: darkgray;
+         font-size: 2em;
+      } */
+      #navbar {
+         background-color: darkgray;
+         font-size: 2em;
+      }
+      #navbar > ul {
+         display: flex;
+         flex-direction: row; /* default */
+         justify-content: flex-start; /* default */
+         align-items: stretch; /* default */
+      }
+
+      #navbar ul {
+         /* border: 1px solid tomato; */
+         margin-top: 0;
+         margin-bottom: 0;
+         list-style: none;
+         padding-left: 0;
+      }
+
+      #navbar > ul > li {
+         /* border: 1px dotted green; */
+         /* list-style-type: square; */
+         /* display: table-cell; */
+         /* padding: 0.5em; */
+         position: relative;
+      }
+      header {
+         height: 5em;
+         background-color: seashell;
+      }
+      #navbar a {
+         text-decoration: none;
+         color: white;
+         display: inline-block;
+         padding: .5em;
+      }
+      #navbar > ul > li > a:hover {
+         background-color:orange;
+      }
+      #navbar > ul ul {
+         display: none;
+         position: absolute;
+         background-color: wheat;
+      } 
+
+      #navbar > ul ul a {
+         color: darkmagenta;
+         white-space: nowrap;
+      }
+
+      #navbar > ul ul a:hover {
+         background-color: darkmagenta;
+         color: wheat;
+      }
+
+
+      #navbar > ul > li:hover > ul {
+         display: block;
+      }
+      /* li:hover {
+         background-color: orange;
+         cursor: pointer;
+      } */
+      .active {
+         background-color: #4caf50;
+         cursor: default;
+      }
+      .active:hover {
+         background-color: #4caf50;
+      }
+
+   </style>
+</head>
+<body>
+   <header>
+
+   </header>
+   <nav id="navbar">
+      <ul>
+         <li>
+            <a href="#" >Menü 1</a>
+         </li>
+         <li>
+            <a href="#">Menü 2</a>
+            <ul>
+               <li><a href="#">Submenü 1</a></li>
+               <li><a href="#">Submenü 2</a></li>
+               <li><a href="#">Submenü 3</a></li>
+               <li><a href="#">Submenü 4</a></li>
+               <li><a href="#">Submenü 5</a></li>
+            </ul>
+         </li>
+         <li><a href="#" class="active">Menü 3</a></li>
+         <li><a href="#">Menü 4</a></li>
+         <li><a href="#">Menü 5</a></li>
+      </ul>
+   </nav>
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nam maxime harum nostrum possimus officiis iusto dolor quisquam repellendus ratione aut, et dolorum. Iusto a officia delectus, est incidunt perspiciatis!
+</body>
+</html>

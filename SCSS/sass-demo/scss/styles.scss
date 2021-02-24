@@ -1,0 +1,14 @@
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
+body {
+   box-sizing: border-box;
+}
+*, ::before, ::after {
+   box-sizing: inherit;
+}
+
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "basics";
+@import "layout";
+@import "navbar";

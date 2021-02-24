@@ -1,0 +1,180 @@
+$breakpoint: (
+    sd: 674px,
+    md: 1250px,
+    ld: 1580px
+);
+
+$anzahlBilder: 7;
+
+body {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+
+main {
+    padding: 1em;
+
+    > div {
+        box-shadow: 2px 2px 2px;
+        padding: 0.5em 1em;
+        margin: 2em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (min-width: map-get($breakpoint, sd)) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        > div {
+            box-shadow: 2px 2px 2px;
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            width: calc(50% - 1em);
+    
+            &:first-child, &:nth-child(2) {
+                margin-top: 0;
+            }
+        
+            &:last-child, &:nth-child(3) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: map-get($breakpoint, md)) {
+    main {
+
+        > div {
+            margin: 0;
+            width: calc(25% - 0.5em);
+        }
+    }
+}
+
+@media (min-width: map-get($breakpoint, ld)) {
+    main {
+        font-size: 2px;
+    }
+}
+
+// FOR
+@for $zaehler from 1 through 10 {
+    .box-#{$zaehler} {
+        margin-bottom: 2em * $zaehler;
+    }
+}
+
+@for $i from 1 through $anzahlBilder {
+    #bild#{$i} {
+        figure {
+            background-image: url(../img/bild#{$i}.jpg);
+        }
+    }
+}
+
+// WHILE
+$zaehler: 10;
+
+@while $zaehler > 0 {
+    .border-#{$zaehler} {
+        border: (1px * $zaehler) solid #333;
+    }
+
+    $zaehler: $zaehler - 2;
+}
+
+$i: 1;
+
+@while $i > 5 {
+    div {
+        &:nth-of-type(#{$i}) {
+            &::before {
+                content: "#{$i}";
+                display: block;
+                text-align: center;
+                background-color: lightgoldenrodyellow;
+                border-radius: 50%;
+            }
+        }
+    }
+    
+    $i: $i + 1;
+}
+
+// EACH
+$animals: tiger, snake, crow, salamander;
+
+@each $animal in $animals {
+    .#{$animal}-icon {
+        background-image: url(images/#{$animal}.png);
+    }
+}
+
+// @each $animal in tiger, snake, crow, salamander {
+//     .#{$animal}-icon {
+//         background-image: url(images/#{$animal}.png);
+//     }
+// }
+
+$animals: (
+    tiger: orange,
+    snake: green,
+    crow: black,
+    salamander: yellow
+);
+
+// @each $keyname, $value in $map {...}
+
+@each $animal, $color in $animals {
+    .#{$animal}-icon {
+        color: $color;
+        background-image: url(images/#{$animal}.png);
+    }
+}
+
+$headings: (
+    h1: 2em,
+    h2: 1.5em,
+    h3: 1em,
+    h4: 0.8em,
+    h5: 12px,
+    h6: 9px
+);
+
+@each $element, $size in $headings {
+    #{$element} {
+        font-size: $size;
+    }
+}
+
+//IF and ELSE
+$time: morning;
+
+.box {
+    @if $time == morning {
+        background-color: red;
+    }
+
+    @else if $time == evening {
+        background-color: blue;
+    }
+    
+    @else {
+        background-color: gray;
+    }
+}

@@ -1,0 +1,37 @@
+html {
+  font-size: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0;
+  background-attachment: fixed; }
+
+@media (min-width: 1024px) {
+  body {
+    width: 80%;
+    margin: 1em auto; } }
+a {
+  text-decoration: none; }
+
+p {
+  line-height: 1.5; }
+
+#content,
+#sidebar {
+  padding: 1rem;
+  border: 1px solid #333;
+  margin-bottom: 1rem; }
+
+@media (min-width: 1024px) {
+  #content {
+    width: 70%;
+    float: left; }
+
+  #sidebar {
+    width: 25%;
+    float: right; } }

@@ -1,0 +1,105 @@
+body {
+  box-sizing: border-box; }
+
+*, ::before, ::after {
+  box-sizing: inherit; }
+
+/* Konfiguration des Carousels */
+#carousel {
+  --carouselBreite: 50vw;
+  --carouselPadding: 2em;
+  --carouselRatio: 56.25%; }
+
+#carousel {
+  /* border: 1px solid tomato; */
+  width: var(--carouselBreite);
+  margin: 0 auto; }
+  #carousel figure {
+    margin: 0; }
+  #carousel > figure {
+    /* padding: 1em; */
+    background-color: darkgray;
+    position: relative; }
+    #carousel > figure::before {
+      content: "";
+      display: block;
+      /* border: 1px solid lightgreen; */
+      padding-top: var(--carouselRatio); }
+    #carousel > figure > figure {
+      position: absolute;
+      top: var(--carouselPadding);
+      right: var(--carouselPadding);
+      bottom: var(--carouselPadding);
+      left: var(--carouselPadding);
+      /* width: calc((100% - 1em) * 0.9); */ }
+      #carousel > figure > figure > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+      #carousel > figure > figure > figcaption {
+        position: absolute;
+        bottom: 2em;
+        padding: 0.5em 1em;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-size: 1.5em;
+        /* width: 100%; */
+        left: 0;
+        right: 0; }
+    #carousel > figure > input {
+      display: none; }
+      #carousel > figure > input:checked + figure {
+        z-index: 10;
+        filter: blur(0) grayscale(0);
+        transition: 0.5s linear; }
+    #carousel > figure > nav {
+      position: absolute;
+      bottom: 0.33em;
+      left: 0;
+      right: 0; }
+      #carousel > figure > nav > ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0; }
+        #carousel > figure > nav > ul > li > label {
+          height: .8em;
+          width: .8em;
+          margin: 0 0.5em;
+          display: inline-block;
+          border: 1px solid white;
+          border-radius: 50%;
+          cursor: pointer;
+          user-select: none; }
+          #carousel > figure > nav > ul > li > label:hover {
+            background-color: violet;
+            border-color: violet; }
+          #carousel > figure > nav > ul > li > label:active {
+            background-color: rebeccapurple;
+            border-color: rebeccapurple; }
+
+#pag01:checked ~ nav label[for=pag01] {
+  color: white;
+  background-color: white; }
+
+#pag02:checked ~ nav label[for=pag02] {
+  color: white;
+  background-color: white; }
+
+#pag03:checked ~ nav label[for=pag03] {
+  color: white;
+  background-color: white; }
+
+#pag04:checked ~ nav label[for=pag04] {
+  color: white;
+  background-color: white; }
+
+#pag05:checked ~ nav label[for=pag05] {
+  color: white;
+  background-color: white; }
+
+#pag06:checked ~ nav label[for=pag06] {
+  color: white;
+  background-color: white; }
+
+#bild06 > img {
+  object-position: 50% 80%; }

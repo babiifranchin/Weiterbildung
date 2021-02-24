@@ -1,0 +1,93 @@
+/* Auch dies ist
+ein Kommentar */
+html {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --meineFarbe: #333;
+}
+
+body {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0;
+  background-attachment: fixed;
+}
+
+main {
+  --meineFarbe: tomato;
+  color: tomato;
+}
+
+@media (min-width: 1024px) {
+  body {
+    width: 80%;
+    margin: 1em auto;
+  }
+}
+a {
+  text-decoration: none;
+  color: #f60;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1::before {
+  content: "2. ";
+}
+
+#content,
+#sidebar {
+  padding: 1rem;
+  border: 1px solid #333;
+  margin-bottom: 1rem;
+}
+
+#content {
+  background-color: #fff0e6;
+  background-color: rgba(69, 171, 205, 0.3);
+}
+
+#content {
+  width: calc(100% - 250px);
+  background-image: url(%resource(layout/images/badge.png)%);
+  color: $font-color;
+}
+
+@media (min-width: 1024px) {
+  #content {
+    float: left;
+  }
+
+  #sidebar {
+    width: 250px;
+    float: right;
+  }
+}
+nav {
+  background-color: tomato;
+  color: teal;
+}
+nav > ul {
+  display: flex;
+  flex-direction: column;
+}
+nav figure img {
+  width: 100%;
+}
+nav figure img ~ figcaption {
+  font-size: 2em;
+}
+nav figure img ~ figcaption cite {
+  font-style: italic;
+}
+nav figure img ~ figcaption::before {
+  content: "Abbildung: ";
+}

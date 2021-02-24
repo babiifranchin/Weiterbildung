@@ -1,0 +1,7 @@
+section {
+   @include boxen(1em, 0.5em, 5px);
+}
+
+article {
+   @include boxen(2em);
+}

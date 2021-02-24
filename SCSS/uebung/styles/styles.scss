@@ -1,0 +1,117 @@
+//Dies ist ein Kommentar
+
+/* Auch dies ist
+ein Kommentar */
+
+$font-color: #333;
+$link-color: #f60;
+$breakpoint: 1024px;
+$base-fonts: Helvetica, Arial, sans-serif;
+// $sidebar-width: 25%;
+
+
+html {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --meineFarbe: #333;
+}
+
+// Schriften noch durch Web-fonts ersetzen
+body {
+    // color: var(--meineFarbe);
+    color: $font-color; 
+    font-family: $base-fonts;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0;
+    background-attachment: fixed;
+}
+
+main {
+    $font-color: tomato;
+    --meineFarbe: tomato;
+    color: $font-color;
+}
+
+@media (min-width: $breakpoint) {
+    body {
+        width: 80%;
+        margin: 1em auto;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+}
+
+p {
+    line-height: 1.5;
+}
+
+h1::before {
+    $nummer: "2. ";
+    content: $nummer;
+}
+
+#content,
+#sidebar {
+    padding: 1rem;
+    // border: 1px solid var(--meineFarbe);
+    border: 1px solid $font-color;
+    margin-bottom: 1rem;
+}
+
+#content {
+    background-color: lighten($link-color, 45%);
+    background-color: rgba(#45abcd, .3);
+}
+
+$sidebar-width: 250px;
+ 
+#content {
+  width: calc(100% - #{$sidebar-width});
+  background-image: url(unquote("%resource(layout/images/badge.png)%"));
+  color: unquote("$font-color");
+}
+
+@media (min-width: $breakpoint) {
+    #content {
+        $content-gap: 5%;
+        // width: (100% - $sidebar-width - $content-gap);
+        float: left;
+    }
+    
+    #sidebar {
+        width: $sidebar-width;
+        float: right;
+    }
+}
+
+nav {
+    background-color: tomato;
+    color: teal;
+    > ul {
+        display: flex;
+        flex-direction: column;
+    }
+    figure {
+        img {
+            width: 100%;
+            ~ figcaption {
+                font-size: 2em;
+                cite {
+                    font-style: italic;
+                }
+                &::before {
+                    content: "Abbildung: ";
+                }
+            }
+        }
+
+    }
+}

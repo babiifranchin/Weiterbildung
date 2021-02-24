@@ -1,0 +1,82 @@
+body {
+   margin: 0;
+}
+
+header {
+   height: 5em;
+   background-color: seashell;
+}
+
+#navbar {
+   background-color: darkgray;
+   font-size: 2em;
+
+   > ul {
+      display: flex;
+      flex-direction: row; /* default */
+      justify-content: flex-start; /* default */
+      align-items: stretch; /* default */
+
+      > li {
+         position: relative;
+      }
+
+      ul {
+         display: none;
+         position: absolute;
+         background-color: wheat;
+
+         a {
+            color: darkmagenta;
+            white-space: nowrap;
+
+            &:hover {
+               background-color: darkmagenta;
+               color: wheat;
+            }
+         }
+
+         // a:hover {
+         //    background-color: darkmagenta;
+         //    color: wheat;
+         // }
+      } 
+
+      > li > a:hover {
+         background-color:orange;
+      }
+
+      > li:hover > ul {
+         display: block;
+      }
+   }
+}
+
+   ul {
+      /* border: 1px solid tomato; */
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style: none;
+      padding-left: 0;
+   }
+
+   a {
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      padding: .5em;
+   }
+
+
+.active {
+   background-color: #4caf50;
+   cursor: default;
+   
+  &.bold {
+   font-weight: bold;
+ }
+}
+
+.active:hover {
+   background-color: #4caf50;
+}

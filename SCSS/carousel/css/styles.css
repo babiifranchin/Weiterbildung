@@ -1,0 +1,302 @@
+body {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+/* Konfiguration des Carousels */
+#carousel {
+  --carouselBreite: 50vw;
+  --carouselPadding: 2em;
+  --carouselRatio: 56.25%;
+}
+
+#carousel {
+  width: var(--carouselBreite);
+  margin: 0 auto;
+}
+#carousel figure {
+  margin: 0;
+}
+#carousel > figure {
+  /* padding: 1em; */
+  background-color: darkgray;
+  position: relative;
+}
+#carousel > figure::before {
+  content: "";
+  display: block;
+  /* border: 1px solid lightgreen; */
+  padding-top: var(--carouselRatio);
+}
+#carousel > figure > figure {
+  position: absolute;
+  top: var(--carouselPadding);
+  right: var(--carouselPadding);
+  bottom: var(--carouselPadding);
+  left: var(--carouselPadding);
+  /* width: calc((100% - 1em) * 0.9); */
+  filter: blur(1px) grayscale(0.2);
+}
+#carousel > figure > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#carousel > figure > figure > figcaption {
+  position: absolute;
+  bottom: 2em;
+  padding: 0.5em 1em;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  /* width: 100%; */
+  left: 0;
+  right: 0;
+}
+#carousel > figure > input {
+  display: none;
+}
+#carousel > figure > input:checked + figure {
+  z-index: 10;
+  filter: blur(0) grayscale(0);
+  transition: 0.3s ease-in;
+}
+#carousel > figure > nav {
+  position: absolute;
+  bottom: 0.33em;
+  left: 0;
+  right: 0;
+}
+#carousel > figure > nav > ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+}
+#carousel > figure > nav > ul > li > label {
+  width: 0.8em;
+  height: .8em;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 0 0.5em;
+  cursor: pointer;
+  user-select: none;
+}
+#carousel > figure > nav > ul > li > label:hover {
+  background-color: violet;
+  border-color: violet;
+}
+#carousel > figure > nav > ul > li > label:active {
+  background-color: yellowgreen;
+  border-color: yellowgreen;
+}
+#carousel > figure > label {
+  position: absolute;
+  top: var(--carouselPadding);
+  left: var(--carouselPadding);
+  right: var(--carouselPadding);
+  bottom: var(--carouselPadding);
+  z-index: 20;
+}
+#carousel > figure > label:first-of-type {
+  z-index: 20;
+}
+#carousel > figure > label::before {
+  content: "\2329";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: none;
+  transition: 0.15s linear;
+}
+#carousel > figure > label::after {
+  content: "\232A";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: none;
+  transition: 0.15s linear;
+}
+
+#pag01:checked ~ nav label[for=pag01] {
+  color: white;
+  background-color: white;
+}
+
+#pag02:checked ~ nav label[for=pag02] {
+  color: white;
+  background-color: white;
+}
+
+#pag03:checked ~ nav label[for=pag03] {
+  color: white;
+  background-color: white;
+}
+
+#pag04:checked ~ nav label[for=pag04] {
+  color: white;
+  background-color: white;
+}
+
+#pag05:checked ~ nav label[for=pag05] {
+  color: white;
+  background-color: white;
+}
+
+#pag06:checked ~ nav label[for=pag06] {
+  color: white;
+  background-color: white;
+}
+
+#pag01:checked ~ [for=pag06] {
+  z-index: 30;
+  right: 50%;
+}
+#pag01:checked ~ [for=pag06]:hover::before {
+  filter: opacity(1);
+}
+
+#pag01:checked ~ [for=pag02] {
+  z-index: 30;
+  left: 50%;
+}
+#pag01:checked ~ [for=pag02]:hover::after {
+  filter: opacity(1);
+}
+
+#pag01:checked ~ [for=pag00] {
+  z-index: 30;
+  right: 50%;
+}
+#pag01:checked ~ [for=pag00]:hover::before {
+  filter: opacity(1);
+}
+
+#pag1:checked ~ [for=pag02] {
+  z-index: 30;
+  left: 50%;
+}
+#pag1:checked ~ [for=pag02]:hover::after {
+  filter: opacity(1);
+}
+
+#pag02:checked ~ [for=pag01] {
+  z-index: 30;
+  right: 50%;
+}
+#pag02:checked ~ [for=pag01]:hover::before {
+  filter: opacity(1);
+}
+
+#pag2:checked ~ [for=pag03] {
+  z-index: 30;
+  left: 50%;
+}
+#pag2:checked ~ [for=pag03]:hover::after {
+  filter: opacity(1);
+}
+
+#pag03:checked ~ [for=pag02] {
+  z-index: 30;
+  right: 50%;
+}
+#pag03:checked ~ [for=pag02]:hover::before {
+  filter: opacity(1);
+}
+
+#pag3:checked ~ [for=pag04] {
+  z-index: 30;
+  left: 50%;
+}
+#pag3:checked ~ [for=pag04]:hover::after {
+  filter: opacity(1);
+}
+
+#pag04:checked ~ [for=pag03] {
+  z-index: 30;
+  right: 50%;
+}
+#pag04:checked ~ [for=pag03]:hover::before {
+  filter: opacity(1);
+}
+
+#pag4:checked ~ [for=pag05] {
+  z-index: 30;
+  left: 50%;
+}
+#pag4:checked ~ [for=pag05]:hover::after {
+  filter: opacity(1);
+}
+
+#pag05:checked ~ [for=pag04] {
+  z-index: 30;
+  right: 50%;
+}
+#pag05:checked ~ [for=pag04]:hover::before {
+  filter: opacity(1);
+}
+
+#pag5:checked ~ [for=pag06] {
+  z-index: 30;
+  left: 50%;
+}
+#pag5:checked ~ [for=pag06]:hover::after {
+  filter: opacity(1);
+}
+
+#pag06:checked ~ [for=pag05] {
+  z-index: 30;
+  right: 50%;
+}
+#pag06:checked ~ [for=pag05]:hover::before {
+  filter: opacity(1);
+}
+
+#pag6:checked ~ [for=pag07] {
+  z-index: 30;
+  left: 50%;
+}
+#pag6:checked ~ [for=pag07]:hover::after {
+  filter: opacity(1);
+}
+
+#pag06:checked ~ [for=pag05] {
+  z-index: 30;
+  right: 50%;
+}
+#pag06:checked ~ [for=pag05]:hover::before {
+  filter: opacity(1);
+}
+
+#pag06:checked ~ [for=pag01] {
+  z-index: 30;
+  left: 50%;
+}
+#pag06:checked ~ [for=pag01]:hover::after {
+  filter: opacity(1);
+}
+
+#bild06 > img {
+  object-position: 50% 80%;
+}

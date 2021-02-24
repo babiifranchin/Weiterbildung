@@ -1,0 +1,112 @@
+$meineFarbe1: tomato;
+$meineFarbe2: #FF3;
+$meineFarbe3:#FC6;
+$meineFarbe4: #6F9;
+$meineFarbe5: #69F;
+
+
+@mixin button {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 1.2rem;
+   font-weight: 500;
+   line-height: normal;
+   color: #fff;
+   text-align: center;
+   text-decoration: none;
+   white-space: nowrap;
+   display: inline-block;
+   padding: .3em 1em;
+   background-color: #367ec2;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   cursor: pointer;
+
+   &::after {
+      content: "\21A9";
+      display: inline-block;
+      padding-left: 1ch;
+   }
+}
+
+@mixin divs($borderradius) {
+   background-color: $meineFarbe5;
+   border: 1px solid $meineFarbe1;
+   border-radius: $borderradius;
+   box-shadow: 2px 2px 2px $meineFarbe3;
+}
+
+@mixin boxen($mymargin, $mypadding: 0.5em, $borderradius: 5px) {
+   margin: $mymargin;
+   padding: $mypadding;
+   background-color: $meineFarbe5;
+   border: 1px solid $meineFarbe1;
+   border-radius: $borderradius;
+   box-shadow: 2px 2px 2px $meineFarbe3;
+}
+
+
+#navbar {
+   background-color: darkgray;
+   > ul {
+      display: flex;
+      list-style: none;
+      > li {
+         > a {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            &:hover {
+               background-color: tomato;
+               color: white;
+            }
+         }
+      }
+      ul {
+         display: none;
+         > li { 
+            > a {
+            }
+         }
+      }
+   }
+   + div {
+      @include divs(20px);
+   }
+}
+
+
+
+div {
+   margin:1em;
+   padding: 0.5em;
+
+   @include divs(5px);
+
+   &:nth-of-type(2) {
+      @include divs(2px);
+   }
+
+   &:last-of-type {
+      @include divs(50%);
+   }
+
+   > a {
+      @include button;
+   }
+
+   > button {
+      @include button;
+   }
+
+   > label {
+      @include button;
+   }
+}
+
+section {
+   @include boxen(1em, 0.5em, 5px);
+}
+
+article {
+   @include boxen(2em);
+}

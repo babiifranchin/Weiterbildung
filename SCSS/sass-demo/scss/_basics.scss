@@ -1,0 +1,26 @@
+div {
+   margin:1em;
+   padding: 0.5em;
+
+   @include divs(5px);
+
+   &:nth-of-type(2) {
+      @include divs(2px);
+   }
+
+   &:last-of-type {
+      @include divs(50%);
+   }
+
+   > a {
+      @include button;
+   }
+
+   > button {
+      @include button;
+   }
+
+   > label {
+      @include button;
+   }
+}

@@ -1,0 +1,176 @@
+body {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+main {
+  padding: 1em;
+}
+main > div {
+  box-shadow: 2px 2px 2px;
+  padding: 0.5em 1em;
+  margin: 2em;
+}
+main > div:first-child {
+  margin-top: 0;
+}
+main > div:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 674px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main > div {
+    box-shadow: 2px 2px 2px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    width: calc(50% - 1em);
+  }
+  main > div:first-child, main > div:nth-child(2) {
+    margin-top: 0;
+  }
+  main > div:last-child, main > div:nth-child(3) {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1250px) {
+  main > div {
+    margin: 0;
+    width: calc(25% - 0.5em);
+  }
+}
+@media (min-width: 1580px) {
+  main {
+    font-size: 2px;
+  }
+}
+.box-1 {
+  margin-bottom: 2em;
+}
+
+.box-2 {
+  margin-bottom: 4em;
+}
+
+.box-3 {
+  margin-bottom: 6em;
+}
+
+.box-4 {
+  margin-bottom: 8em;
+}
+
+.box-5 {
+  margin-bottom: 10em;
+}
+
+.box-6 {
+  margin-bottom: 12em;
+}
+
+.box-7 {
+  margin-bottom: 14em;
+}
+
+.box-8 {
+  margin-bottom: 16em;
+}
+
+.box-9 {
+  margin-bottom: 18em;
+}
+
+.box-10 {
+  margin-bottom: 20em;
+}
+
+#bild1 figure {
+  background-image: url(../img/bild1.jpg);
+}
+
+#bild2 figure {
+  background-image: url(../img/bild2.jpg);
+}
+
+#bild3 figure {
+  background-image: url(../img/bild3.jpg);
+}
+
+#bild4 figure {
+  background-image: url(../img/bild4.jpg);
+}
+
+#bild5 figure {
+  background-image: url(../img/bild5.jpg);
+}
+
+#bild6 figure {
+  background-image: url(../img/bild6.jpg);
+}
+
+#bild7 figure {
+  background-image: url(../img/bild7.jpg);
+}
+
+.border-10 {
+  border: 10px solid #333;
+}
+
+.border-8 {
+  border: 8px solid #333;
+}
+
+.border-6 {
+  border: 6px solid #333;
+}
+
+.border-4 {
+  border: 4px solid #333;
+}
+
+.border-2 {
+  border: 2px solid #333;
+}
+
+.tiger-icon {
+  background-image: url(images/tiger.png);
+}
+
+.snake-icon {
+  background-image: url(images/snake.png);
+}
+
+.crow-icon {
+  background-image: url(images/crow.png);
+}
+
+.salamander-icon {
+  background-image: url(images/salamander.png);
+}
+
+.tiger-icon {
+  color: orange;
+  background-image: url(images/tiger.png);
+}
+
+.snake-icon {
+  color: green;
+  background-image: url(images/snake.png);
+}
+
+.crow-icon {
+  color: black;
+  background-image: url(images/crow.png);
+}
+
+.salamander-icon {
+  color: yellow;
+  background-image: url(images/salamander.png);
+}

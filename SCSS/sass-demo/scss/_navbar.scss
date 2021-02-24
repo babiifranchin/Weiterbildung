@@ -1,0 +1,28 @@
+#navbar {
+   background-color: darkgray;
+   > ul {
+      display: flex;
+      list-style: none;
+      > li {
+         > a {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            &:hover {
+               background-color: tomato;
+               color: white;
+            }
+         }
+      }
+      ul {
+         display: none;
+         > li { 
+            > a {
+            }
+         }
+      }
+   }
+   + div {
+      @include divs(20px);
+   }
+}

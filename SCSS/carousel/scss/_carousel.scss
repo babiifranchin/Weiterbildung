@@ -1,0 +1,254 @@
+/* Konfiguration des Carousels */
+
+$anzahlBilder: 6;
+
+#carousel {
+   --carouselBreite: 50vw;
+   --carouselPadding: 2em;
+   --carouselRatio: 56.25%;
+}
+
+#carousel {
+   // border: 1px solid tomato;
+   width: var(--carouselBreite);
+   margin: 0 auto;
+
+   figure {
+      margin: 0;
+   }
+
+   > figure {
+      /* padding: 1em; */
+      background-color: darkgray;
+      position: relative;
+
+      &::before {
+         content: "";
+         display: block;
+         /* border: 1px solid lightgreen; */
+         padding-top: var(--carouselRatio);
+      }
+
+      > figure {
+         position: absolute;
+         top: var(--carouselPadding);
+         right: var(--carouselPadding);
+         bottom: var(--carouselPadding);
+         left: var(--carouselPadding);
+         /* width: calc((100% - 1em) * 0.9); */
+         filter: blur(1px) grayscale(0.2);
+
+         > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+
+         > figcaption {
+            position: absolute;
+            bottom: 2em;
+            padding: 0.5em 1em;
+            background-color: rgba(0,0,0,.2);
+            font-size: 1.5em;
+            /* width: 100%; */
+            left: 0;
+            right: 0;
+         }
+
+      }
+
+      > input {
+         display: none;
+
+         &:checked + figure {
+            z-index: 10;
+            filter: blur(0) grayscale(0);
+            transition: 0.3s ease-in;
+         }
+      }
+
+      > nav {
+         // background-color: tomato;
+         position: absolute;
+         bottom: 0.33em;
+         left: 0;
+         right: 0;
+
+         > ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+
+            > li {
+
+               > label {
+                  width: 0.8em;
+                  height: .8em;
+                  display: inline-block;
+                  border-radius: 50%;
+                  border: 1px solid white;
+                  margin: 0 0.5em;
+                  cursor: pointer;
+                  user-select: none;
+
+                  &:hover {
+                     background-color: violet;
+                     border-color: violet;
+                  }
+
+                  &:active {
+                     background-color: yellowgreen;
+                     border-color: yellowgreen;
+                  }
+               }
+
+            }
+         }
+      }
+
+      > label {
+         position: absolute;
+         top: var(--carouselPadding);
+         left: var(--carouselPadding);
+         right: var(--carouselPadding);
+         bottom: var(--carouselPadding);
+         // background-color: rgba(255,0,0,.1);
+         z-index: 20;
+
+         &:first-of-type {
+            z-index: 20;
+         }
+
+         &::before {
+            content: "\2329";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 2em;
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255,255,255,0.2);
+            display: none;
+            transition: 0.15s linear;
+         }
+
+         &::after {
+            content: "\232A";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 2em;
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255,255,255,0.2);
+            display: none;
+            transition: 0.15s linear;
+
+         }
+      }
+   }
+}
+
+// #pag01:checked ~ nav label[for=pag01] {
+//    color: white;
+//    background-color: white;
+// }
+
+// #pag02:checked ~ nav label[for=pag02] {
+//    color: white;
+//    background-color: white;
+// }
+
+@for $i from 1 through $anzahlBilder {
+   @if $i < 10 {
+      #pag0#{$i}:checked ~ nav label[for=pag0#{$i}] {
+         color: white;
+         background-color: white;
+      }
+   } @else {
+      #pag#{$i}:checked ~ nav label[for=pag#{$i}] {
+         color: white;
+         background-color: white;
+      }
+   }
+}
+
+#pag01:checked ~ [for=pag0#{$anzahlBilder}] {
+   z-index: 30;
+   right: 50%;
+
+   &:hover::before {
+      filter: opacity(1);
+   }
+}
+
+#pag01:checked ~ [for=pag02] {
+   z-index: 30;
+   left: 50%;
+
+   &:hover::after {
+      filter: opacity(1);
+   }
+}
+
+@for $i from 1 through $anzahlBilder {
+   #pag0#{$i}:checked ~ [for=pag0#{$i - 1}] {
+      z-index: 30;
+      right: 50%;
+   
+      &:hover::before {
+         filter: opacity(1);
+      }
+   }
+   
+   #pag#{$i}:checked ~ [for=pag0#{$i + 1}] {
+      z-index: 30;
+      left: 50%;
+   
+      &:hover::after {
+         filter: opacity(1);
+      }
+   }
+}
+
+#pag0#{$anzahlBilder}:checked ~ [for=pag0#{$anzahlBilder - 1}] {
+   z-index: 30;
+   right: 50%;
+
+   &:hover::before {
+      filter: opacity(1);
+   }
+}
+
+#pag0#{$anzahlBilder}:checked ~ [for=pag01] {
+   z-index: 30;
+   left: 50%;
+
+   &:hover::after {
+      filter: opacity(1);
+   }
+}
+
+// #bild05 {
+//    // z-index: 10;
+// }
+
+#bild06 {
+   // z-index: 100;
+
+   > img {
+      object-position: 50% 80%;
+   }
+}
+

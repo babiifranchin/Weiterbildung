@@ -1,0 +1,37 @@
+@import "bootstrap/bootstrap";
+
+@font-face {
+    font-family: Garamond;
+    src: url("../fonts/eb-garamond/eb-garamond-regular.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Garamond;
+    src: url("../fonts/eb-garamond/eb-garamond-italic.woff") format("woff");
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Garamond;
+    src: url("../fonts/eb-garamond/eb-garamond-bold.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Garamond;
+    src: url("../fonts/eb-garamond/eb-garamond-bold-italic.woff") format("woff");
+    font-style: italic;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    
+    figure & {
+        display: block;
+    }
+}
